@@ -1,0 +1,159 @@
+{
+  "navbar": {
+    "services": "Soins",
+    "pricing": "Infos et tarifs",
+    "book": "Réserver"
+  },
+
+  "landing": {
+    "hero": {
+      "title": "Bienvenue chez Lamoon Thaï Spa",
+      "description": [
+        { "type": "highlight", "value": "Votre institut de beauté & salon de massage traditionnel thaïlandais à Paris " },
+        { "type": "text", "value": "où se rencontrent bien-être et tradition pour une expérience unique." }
+      ],
+      "button": "Réserver"
+    },
+  
+    "features": {
+      "1": {
+        "title": "Service professionnel",
+        "description": "Techniques et soins réalisés par des experts pour des résultats remarquables.",
+        "icon": "WomanHeadIcon"
+      },
+      "2": {
+        "title": "Relaxation et sérénité",
+        "description": "Créez un moment de sérénité et de détente absolue pour le corps et l'esprit.",
+        "icon": "CandleIcon"
+      },
+      "3": {
+        "title": "Expérience cinq étoiles",
+        "description": "Des standards élevés et la satisfaction reconnue de nombreux clients.",
+        "icon": "SpaCreamPotIcon"
+      },
+      "4": {
+        "title": "Ingrédients naturels",
+        "description": "Doux pour la peau, composés exclusivement d'ingrédients naturels.",
+        "icon": "HerbsLeavesIcon"
+      }
+    },
+  
+    "section_intro": {
+      "title": "L’Art du Bien-Être Thaïlandais",
+      "description": "Votre moment de détente et de bien-être commence ici.",
+      "cards": {
+        "button": "Réserver",
+        "1": {
+          "type": "Massages",
+          "title": "Massage Thaï Traditionnel",
+          "description": "Détend le corps et rééquilibre l’énergie par des pressions et étirements thaïlandais.",
+          "durations": [
+            { "time": "30min", "price": "45€" },
+            { "time": "1h", "price": "75€" },
+            { "time": "1h30", "price": "100€" }
+          ],
+          "image": "/images/card-mock.jpg"
+        },
+        "2": {
+          "type": "Gommages",
+          "title": "Gommages accompagné d’un massage",
+          "description": "",
+          "durations": [
+            { "time": "30min", "price": "-" },
+            { "time": "1h", "price": "99€" },
+            { "time": "1h30", "price": "139€" }
+          ],
+          "image": "/images/card-mock.jpg"
+        },
+        "3": {
+          "type": "Massages",
+          "title": "Massage tête et épaules",
+          "description": "Soulage les tensions accumulées du cou, des épaules et du cuir chevelu.",
+          "durations": [
+            { "time": "30min", "price": "49€" },
+            { "time": "1h", "price": "-" },
+            { "time": "1h30", "price": "-" }
+          ],
+          "image": "/images/card-mock.jpg"
+        }
+      }
+    },
+
+    "services": {
+      "button": "Découvrir",
+      "1": {
+        "title": "Massage Thaïlandais",
+        "description": [
+          { "type": "text", "value": "Découvrez l’authenticité du massage thaï dans notre " },
+          { "type": "highlight", "value": "institut de beauté à Paris" },
+          { "type": "text", "value": ". Grâce à des pressions et étirements précis, cette technique ancestrale soulage les tensions et rééquilibre l’énergie du corps." }
+        ],
+        "image": "/images/massage.jpg"
+      },
+      "2": {
+        "title": "Epilation cire orientale (sucre)",
+        "description": [
+          { "type": "text", "value": "Profitez d’une peau douce et soyeuse plus longtemps avec notre épilation à la cire orientale naturelle. Une technique douce et efficace proposée dans notre "},
+          { "type": "highlight", "value": "institut de beauté à Paris " },
+          { "type": "text", "value": "pour une expérience tout en confort." }
+        ],
+        "image": "/images/cire-orientae.png"
+      },
+      "3": {
+        "title": "Soins du visage",
+        "description": [
+          { "type": "text", "value": "Offrez à votre peau un éclat naturel avec nos soins experts. Adaptés à tous les types de peau, ils hydratent, purifient et régénèrent en profondeur pour un teint lumineux."}
+        ],
+        "image": "/images/soin-du-visage.png"
+      },
+      "4": {
+        "title": "Teinture des cils et sourcils",
+        "description": [
+          { "type": "text", "value": "Intensifiez votre regard avec une teinture adaptée à votre carnation. Dans notre " },
+          { "type": "highlight", "value": "institut de beauté à Paris, " },
+          { "type": "text", "value": "nos experts subliment vos cils et sourcils pour un effet naturel et longue durée."}
+        ],
+        "image": "/images/teinture.png"
+      },
+      "5": {
+        "title": "Gommages",
+        "description": [
+          { "type": "text", "value": "Exfoliez votre peau en douceur avec nos soins purifiants. En éliminant les impuretés et les cellules mortes, votre peau retrouve douceur, éclat et souplesse."}
+        ],
+        "image": "/images/gommage.png"
+      }
+    },
+
+    "contact": {
+      "address": "25 rue de turin, Paris 75008",
+      "phones": {
+        "landline": {
+          "label": "Tél (Fixe)",
+          "value": "0186045448"
+        },
+        "mobile": {
+          "label": "Tél (portable)",
+          "value": "0769886407"
+        }
+      }
+    }
+  },
+
+  "info": {
+    "title": "Infos et tarifs",
+    "search": "Search ... ",
+    "loadMore": "Charger plus", 
+    "types": [
+      "Massage", "Gommages", "Soins du visage", "Epilation cire orientale (sucre)", "Teinture des cils et sourcils"
+    ]
+  },
+
+  "services_detail": {
+
+  },
+
+  "footer": {
+    "copyright": "Copyright © 2025 Lamoon Thaï Spa | All Rights Reserved"
+  }
+
+}

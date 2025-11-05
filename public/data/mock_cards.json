@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Massage Thaï Traditionnel",
+    "description": "Détend le corps et rééquilibre l'énergie par des pressions et étirements thaïlandais.",
+    "type": "Massages",
+    "prices": {
+      "30m": 45,
+      "1h": 75,
+      "1h30": 100
+    }
+  },
+  {
+    "title": "Massage aux huiles",
+    "description": "Un massage fluide et relaxant pour apaiser le corps et l'esprit.",
+    "type": "Massages",
+    "prices": {
+      "30m": 49,
+      "1h": 79,
+      "1h30": 110
+    }
+  },
+  {
+    "title": "Massage aux huiles chaudes Coco, Monoï, Balinaise, Thé vert",
+    "description": "Relaxation profonde avec huiles chaudes.",
+    "type": "Massages",
+    "prices": {
+      "30m": 55,
+      "1h": 85,
+      "1h30": 120
+    }
+  },
+  {
+    "title": "Massage à la bougie",
+    "description": "Une expérience enveloppante où la cire chaude nourrit et adoucit la peau.",
+    "type": "Massages",
+    "prices": {
+      "30m": 59,
+      "1h": 95,
+      "1h30": 130
+    }
+  },
+  {
+    "title": "Réflexologie Plantaire",
+    "description": "Stimule les points des pieds pour rétablir l'équilibre et la vitalité.",
+    "type": "Massages",
+    "prices": {
+      "30m": 55,
+      "1h": 85,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Massage tête et épaules",
+    "description": "Soulage les tensions accumulées du cou, des épaules et du cuir chevelu.",
+    "type": "Massages",
+    "prices": {
+      "30m": 49,
+      "1h": null,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Gommages accompagné d'un massage",
+    "description": "",
+    "type": "Gommages",
+    "prices": {
+      "30m": null,
+      "1h": 99,
+      "1h30": 139
+    }
+  },
+  {
+    "title": "Gommages Fruits exotiques | Sel de Guérande | Sucre rose de Damas",
+    "description": "",
+    "type": "Gommages",
+    "prices": {
+      "30m": 55,
+      "1h": null,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Soin contours des yeux",
+    "description": "Hydratant et illuminateur, pour une peau douce et éclatante",
+    "type": "Soins du visage",
+    "prices": {
+      "30m": 55,
+      "1h": null,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Soin signature Lamoon",
+    "description": "Purifiant et hydratant, pour tout types de peau",
+    "type": "Soins du visage",
+    "prices": {
+      "30m": null,
+      "45m": 65,
+      "1h": null,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Soin douceur de rose",
+    "description": "Rituel éclatant pour tout types de peau",
+    "type": "Soins du visage",
+    "prices": {
+      "30m": null,
+      "1h": 72,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Soin sublime argan",
+    "description": "Réparation et éclat naturel, pour tout types de peau",
+    "type": "Soins du visage",
+    "prices": {
+      "30m": null,
+      "1h": 82,
+      "1h30": null
+    }
+  },
+  {
+    "title": "Epilation cire orientale (sucre)",
+    "description": "Méthode traditionnelle et naturelle pour une peau douce et soyeuse.",
+    "type": "Epilation cire orientale (sucre)",
+    "prices": {
+      "30m": 25,
+      "1h": 45,
+      "1h30": 65
+    }
+  },
+  {
+    "title": "Teinture des cils et sourcils",
+    "description": "Intensifie le regard pour une durée de 3 à 4 semaines.",
+    "type": "Teinture des cils et sourcils",
+    "prices": {
+      "30m": 20,
+      "1h": null,
+      "1h30": null
+    }
+  }
+]

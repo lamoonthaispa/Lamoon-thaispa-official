@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+button {
+  cursor: pointer;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Background */
+  --color-background: #F6F1EA;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Card colors */
+  --color-card-background: #F7F6FA;
+  --color-card-type-background: #2A282F;
+  --color-card-type-text: #FFFFFF;
+  --color-card-text-title: #3C2A17;
+  --color-card-text-description: #7A6A55;
+  --color-card-duration-text: #3C2A17;
+  --color-card-price-text: #7A6A55;
+  --color-card-button-background: #4F3921;
+  --color-card-button-text: #FFFFFF;
+
+  /* Navbar colors */
+  --color-navbar-background: #FFFFFF;
+  --color-navbar-text: #5A352C;
+  --color-navbar-button-background: #4F3921;
+  --color-navbar-button-text: #FFFFFF;
+  --color-navbar-hamburger: #5A352C;
+
+  /* Landing Hero colors */
+  --color-landing-hero-text-title: #FFFFFF;
+  --color-landing-hero-text-description: #FFFFFF;
+  --color-landing-hero-button-background: #4F3921;
+  --color-landing-hero-button-text: #FFFFFF;
+  --color-landing-hero-banner-gradient: #F6F1EA;
+
+  /* Landing Features colors */
+  --color-landing-features-text-title: #4F3921;
+  --color-landing-features-text-description: #7A6A55;
+  --color-landing-features-icon: #4F3921;
+
+  /* Landing Section Intro colors */
+  --color-landing-section-intro-text-title: #3C2A17;
+  --color-landing-section-intro-text-description: #7A6A55;
+
+  /* Landing Services colors */
+  --color-landing-services-text-title: #3C2A17;
+  --color-landing-services-text-description: #7A6A55;
+  --color-landing-services-button-background: #4F3921;
+  --color-landing-services-button-text: #F6F1EA;
+  --color-landing-services-divider: #7A6A55;
+
+  /* Landing Contact colors */
+  --color-landing-contact-text: #F6F1EA;
+  --color-landing-contact-divider: #F6F1EA;
+
+  /* Info colors */
+  --color-info-text-title: #3C2A17;
+  --color-info-search-background: #FFFFFF;
+  --color-info-search-text: #BFA587;
+  --color-info-divider: #7A6A55;
+
+  /* Service Detail colors */
+  --color-service-detail-text-title: #3C2A17;
+  --color-service-detail-text-description: #7A6A55;
+  --color-service-detail-benefits-icon: #4F3921;
+  --color-service-detail-benefits-text: #7A6A55;
+
+  /* Footer colors */
+  --color-footer-background: #4F3921;
+  --color-footer-icon: #7D674E;
+  --color-footer-divider: #74624F;
+  --color-footer-text: #74624F;
+  --color-footer-charger-plus-text: #7A6A55;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-kaisei-decol), serif;
 }
+
+/* Swiper Pagination Styles */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #FFFFFF !important;
+}
+
+/* Swiper Navigation Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
