@@ -8,20 +8,22 @@ import {
   SITE_URL
 } from "@/lib/seo";
 
-type ServiceParams = {
-  params: { serviceType: ServiceType };
-};
+type ParamsPromise = Promise<{ serviceType: string }>;
 
-export async function generateMetadata({ params }: ServiceParams): Promise<Metadata> {
-  const metadata = SERVICE_PAGE_METADATA[params.serviceType];
+const isServiceType = (value: string): value is ServiceType =>
+  value in SERVICE_PAGE_METADATA;
+
+export async function generateMetadata({ params }: { params: ParamsPromise }): Promise<Metadata> {
   const { serviceType } = await params;
-  if (!metadata) {
+
+  if (!isServiceType(serviceType)) {
     return {
       title: "Service Lamoon Thaï Spa",
       description: DEFAULT_DESCRIPTION,
     };
   }
 
+  const metadata = SERVICE_PAGE_METADATA[serviceType];
   const pageUrl = `${SITE_URL}/services/${serviceType}`;
   const imageUrl = `${SITE_URL}${metadata.imagePath}`;
 
@@ -48,12 +50,13 @@ export async function generateMetadata({ params }: ServiceParams): Promise<Metad
   };
 }
 
-export default async function ServiceDetail({ params }: ServiceParams) {
-  if (!SERVICE_PAGE_METADATA[params.serviceType]) {
+export default async function ServiceDetail({ params }: { params: ParamsPromise }) {
+  const { serviceType } = await params;
+
+  if (!isServiceType(serviceType)) {
     notFound();
   }
 
-  const { serviceType } = await params
-
   return <ServiceTypePage serviceType={serviceType} />;
 }
+
