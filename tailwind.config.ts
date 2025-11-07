@@ -86,12 +86,13 @@ const config: Config = {
           textDescription: "var(--color-service-detail-text-description)",
           benefits: {
             icon: "var(--color-service-detail-benefits-icon)",
-            text: "var(--color-service-detail-benefits-text)"
+            text: "var(--color-service-detail-benefits-text)",
           },
           button: {
             background: "var(--color-service-detail-button-background)",
             text: "var(--color-service-detail-button-text)"
-          }
+          },
+          divider: "var(--color-service-detail-divider)"
         },
 
         footer: {

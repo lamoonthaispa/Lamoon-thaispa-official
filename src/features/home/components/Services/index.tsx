@@ -17,7 +17,10 @@ export default function Services() {
     });
 
   return (
-    <div>
+    <section aria-labelledby="services-heading">
+      <h2 id="services-heading" className="sr-only">
+        Nos services
+      </h2>
       <Divider />
       {serviceEntries.map(({ key, service }, index) => (
         <ServiceHighlight
@@ -29,6 +32,6 @@ export default function Services() {
           buttonText={buttonText}
         />
       ))}
-    </div>
+    </section>
   )
 }

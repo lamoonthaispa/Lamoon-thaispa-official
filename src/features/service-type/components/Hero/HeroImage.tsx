@@ -8,18 +8,24 @@ export default function HeroImage({
   alt: string;
 }) {
   return (
-    <div>
+    <figure
+      className="
+      relative
+      rounded-xl
+      w-full h-[289px]
+      md:h-[482px]
+      lg:h-[431px]
+    "
+    >
       <Image
         src={src}
         alt={alt}
         fill
+        loading="lazy"
         className="object-cover
           rounded-xl 
-          w-[255px] h-[289px]
-          md:w-[335px] md:h-[482px]
-          lg:w-[496px] lg:h-[431px]
         "
         />
-    </div>
+    </figure>
   )
 }

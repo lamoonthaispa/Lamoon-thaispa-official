@@ -1,5 +1,5 @@
-import Title from "./Title"
-import Description from "./Description"
+import Title from "../Title"
+import Description from "../Description"
 import HeroImage from "./HeroImage"
 import Button from "./Button"
 
@@ -20,17 +20,23 @@ export default function Hero({
   alt: string;
 }) {
   return (
-    <div className="flex flex-col gap-10 py-[25px] px-[60px] 
+    <section
+      className="flex flex-col gap-10 py-[25px] px-[60px] 
       md:flex-row md:gap-5 md:py-[30px] md:px-[45px]
       lg:flex-row-reverse lg:gap-[64px] lg:py-[75px] lg:px-[112px]
-    ">
-      <HeroImage src={src} alt={alt} />
+      items-center"
+      aria-labelledby="service-hero-heading"
+    >
 
-      <div className="flex flex-col gap-[15px] md:gap-[20px] lg:gap-[30px]">
-        <Title title={title} />
+      <div className="w-full md:w-1/2">
+        <HeroImage src={src} alt={alt} />
+      </div>
+
+      <div className="w-full md:w-1/2 flex flex-col gap-[15px] md:gap-[20px] lg:gap-[30px]">
+        <Title title={title} id="service-hero-heading" />
         <Description descriptions={descriptions} />
         <Button buttonText={buttonText} />
       </div>
-    </div>
+    </section>
   )
 }

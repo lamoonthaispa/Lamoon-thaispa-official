@@ -1,4 +1,5 @@
 import { Clock } from "lucide-react"
+
 export default function Duration({
   durations
 }: {
@@ -9,22 +10,19 @@ export default function Duration({
 }) {
   
   return (
-    <div className="w-full flex justify-between flex-col gap-2 md:gap-3">
-      
-      { durations.map((duration) => (
-        <div className="w-full inline-flex justify-between items-center" key={duration.time}>
-          <div className="inline-flex items-center gap-1 text-card-duration-text font-normal">
-            <Clock size={10} />
-            { duration.time }
-          </div>
+    <ul className="w-full flex justify-between flex-col gap-2 md:gap-3">
+      {durations.map((duration) => (
+        <li className="w-full inline-flex justify-between items-center" key={duration.time}>
+          <span className="inline-flex items-center gap-1 text-card-duration-text font-normal">
+            <Clock size={10} aria-hidden="true" />
+            <span>{duration.time}</span>
+          </span>
 
-          <div className="text-card-price-text font-normal">
-            { duration.price }
-          </div>
-        </div>
+          <span className="text-card-price-text font-normal">
+            {duration.price}
+          </span>
+        </li>
       ))}
-
-
-    </div>
+    </ul>
   )
 }

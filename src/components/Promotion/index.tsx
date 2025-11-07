@@ -16,7 +16,13 @@ export default function Promotion() {
   const images = Array.from({ length: 5 }, (_, i) => `/images/promotion/${i + 1}.png`);
 
   return (
-    <div className="flex justify-center items-center py-[20.51px] px-[16.91px] md:py-[43.75px] md:px-[36.25px] lg:py-[70px] lg:px-[58px] mb-20">
+    <section
+      className="flex justify-center items-center py-[20.51px] px-[16.91px] md:py-[43.75px] md:px-[36.25px] lg:py-[70px] lg:px-[58px] mb-20"
+      aria-labelledby="promotion-heading"
+    >
+      <h2 id="promotion-heading" className="sr-only">
+        Offres promotionnelles Lamoon Thaï Spa
+      </h2>
       <div className="relative w-[264.84px] h-[148.97px] md:w-[565px] md:h-[317.81px] lg:w-[904px] lg:h-[508.5px]">
         <Swiper
           modules={[Navigation, Pagination]}
@@ -32,8 +38,9 @@ export default function Promotion() {
             <SwiperSlide key={index}>
               <Image
                 src={src}
-                alt=""
+                alt="Offre promotionnelle Lamoon Thaï Spa"
                 fill
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </SwiperSlide>
@@ -92,6 +99,6 @@ export default function Promotion() {
           </span>
         </button>
       </div>
-    </div>
+    </section>
   );
 }

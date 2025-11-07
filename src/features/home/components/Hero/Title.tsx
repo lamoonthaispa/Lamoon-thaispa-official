@@ -7,7 +7,7 @@ export default function Title() {
         {hero.title}
       </h1>
 
-      <h2 className='text-landing-hero-text-description text-lg md:text-xl lg:text-3xl flex flex-col items-center'>
+      <p className='text-landing-hero-text-description text-lg md:text-xl lg:text-3xl flex flex-col items-center text-center'>
         {hero.description.map((item, index) => {
           if (item.type === 'highlight') {
             return (
@@ -22,7 +22,7 @@ export default function Title() {
             </span>
           )
         })}
-      </h2>
+      </p>
     </div>
   )
 }

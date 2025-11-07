@@ -16,7 +16,10 @@ export default function GallerySlider() {
   const images = Array.from({ length: 5 }, (_, i) => `/images/gallery-slider/${i + 1}.jpg`);
 
   return (
-    <div className="relative">
+    <section className="relative" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading" className="sr-only">
+        Galerie Lamoon Thaï Spa
+      </h2>
       <Swiper
         modules={[Navigation, Pagination]}
         onBeforeInit={(swiper) => {
@@ -31,8 +34,9 @@ export default function GallerySlider() {
           <SwiperSlide key={index}>
             <Image
               src={src}
-              alt=""
+              alt="Galerie photo Lamoon Thaï Spa"
               fill
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </SwiperSlide>
@@ -90,6 +94,6 @@ export default function GallerySlider() {
           />
         </span>
       </button>
-    </div>
+    </section>
   );
 }

@@ -12,6 +12,7 @@ export default function Banner() {
         src="/images/banner.jpg"
         alt="Banner"
         fill
+        loading="lazy"
         className="object-cover z-10"
       />
 

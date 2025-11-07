@@ -1,20 +1,38 @@
 import { ICONS, IconName } from "@/components/icons";
 
+export type BenefitIconName = IconName | `${IconName}Icon`;
+
+const normalizeIconName = (iconName: BenefitIconName): IconName | undefined => {
+  if (iconName in ICONS) {
+    return iconName as IconName;
+  }
+
+  if (iconName.endsWith("Icon")) {
+    const trimmed = iconName.slice(0, -4) as IconName;
+    if (trimmed in ICONS) {
+      return trimmed;
+    }
+  }
+
+  return undefined;
+};
+
 export default function BenefitItem({
-  icon, 
+  icon,
   label
 }: {
-  icon: IconName;
+  icon: BenefitIconName;
   label: string;
 }) {
-  const Icon = ICONS[icon];
+  const normalizedIcon = normalizeIconName(icon);
+  const Icon = normalizedIcon ? ICONS[normalizedIcon] : undefined;
   
   return (
-    <div className="w-full flex justify-start items-center
+    <li className="w-full flex justify-start items-center
       gap-8 lg:gap-10
     ">
-      {Icon && <Icon className="w-6 h-6 shrink-0" />}
-      <p className="text-lg leading-relaxed">{label}</p>
-    </div>
+      {Icon && <Icon aria-hidden="true" />}
+      <p className="text-service-detail-benefits-text text-[15px] md:text-[20px] lg:text-[26px]">{label}</p>
+    </li>
   )
 }

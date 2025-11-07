@@ -4,9 +4,11 @@ export default function Background() {
     <>
       <Image 
         src="/images/contact.jpg"
-        alt="Contact Background"
+        alt=""
         fill
+        loading="lazy"
         className="absolute inset-0 object-cover z-10 w-full"
+        aria-hidden="true"
       />
 
       <div 

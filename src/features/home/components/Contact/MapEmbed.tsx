@@ -7,8 +7,9 @@ export default function MapEmbed() {
     ">
       <Image 
         src="/images/map.png"
-        alt="Map"
+        alt="Emplacement de Lamoon Thaï Spa à Paris"
         fill
+        loading="lazy"
         className="object-cover"
       />
     </div>

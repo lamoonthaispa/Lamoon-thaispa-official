@@ -8,7 +8,7 @@ import Promotion from "@/components/Promotion"
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col bg-background">
+    <main className="flex flex-col bg-background">
       <Hero />
       <Features />
       <Promotion />
@@ -16,6 +16,6 @@ export default function HomePage() {
       <GallerySlider />
       <Services />
       <Contact />
-    </div>
+    </main>
   )
 }

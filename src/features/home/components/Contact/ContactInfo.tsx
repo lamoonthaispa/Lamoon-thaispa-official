@@ -3,22 +3,31 @@ import { MapPin, Phone, Smartphone } from "lucide-react"
 export default function ContactInfo() {
   const contact = messages.landing.contact
   return (
-    <div className="flex flex-col gap-3 lg:gap-4 ">
-      
-      <div className="inline-flex gap-8 lg:gap-10 text-landing-contact-text text-lg md:text-2xl lg:text-3xl">
-        <MapPin className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12'/>
-        { contact.address }
-      </div>
+    <address className="flex flex-col gap-3 lg:gap-4 not-italic text-landing-contact-text">
+      <p className="inline-flex gap-8 lg:gap-10 items-center text-lg md:text-2xl lg:text-3xl">
+        <MapPin className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12' aria-hidden="true" />
+        <span>{contact.address}</span>
+      </p>
 
-      <div className="inline-flex gap-8 lg:gap-10 text-landing-contact-text text-lg md:text-2xl lg:text-3xl">
-        <Phone className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12'/>
-        { contact.phones.landline.label } : { contact.phones.landline.value }
-      </div>
+      <p className="inline-flex gap-8 lg:gap-10 items-center text-lg md:text-2xl lg:text-3xl">
+        <Phone className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12' aria-hidden="true" />
+        <span>
+          {contact.phones.landline.label} :
+          <a className="ml-1 underline-offset-2 hover:underline" href={`tel:${contact.phones.landline.value}`}>
+            {contact.phones.landline.value}
+          </a>
+        </span>
+      </p>
 
-      <div className="inline-flex gap-8 lg:gap-10 text-landing-contact-text text-lg md:text-2xl lg:text-3xl">
-        <Smartphone className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12'/>
-        { contact.phones.mobile.label } : { contact.phones.mobile.value }
-      </div>
-    </div>
+      <p className="inline-flex gap-8 lg:gap-10 items-center text-lg md:text-2xl lg:text-3xl">
+        <Smartphone className='w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12' aria-hidden="true" />
+        <span>
+          {contact.phones.mobile.label} :
+          <a className="ml-1 underline-offset-2 hover:underline" href={`tel:${contact.phones.mobile.value}`}>
+            {contact.phones.mobile.value}
+          </a>
+        </span>
+      </p>
+    </address>
   )
 }

@@ -6,7 +6,7 @@ const ALLOWED_SERVICES = [
   'massage',
   'gommage',
   'teinture',
-  'cire-orientae',
+  'cire-orientale',
   'soin-du-visage'
 ];
 

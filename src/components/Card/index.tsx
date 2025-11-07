@@ -19,31 +19,27 @@ export default function Card({
   }[]
 }) {
   return (
-    <div className="w-[270px] md:w-[332px] lg:w-[360px] bg-card-background flex flex-col items-center gap-3 p-3 rounded-xl">
-      
-      <div className="w-full h-[140px] md:h-[185px] lg:h-[201px] relative rounded-xl">
-        <Image 
+    <article className="w-[270px] md:w-[332px] lg:w-[360px] bg-card-background flex flex-col items-center gap-3 p-3 rounded-xl">
+      <figure className="w-full h-[140px] md:h-[185px] lg:h-[201px] relative rounded-xl">
+        <Image
           src={image}
           alt={title}
           fill
+          loading="lazy"
           className="object-cover rounded-xl"
-        />  
+        />
         <TypeTag type={type} />
-      </div>
+      </figure>
 
-      <div className="flex flex-col items-start gap-2">
+      <header className="flex flex-col items-start gap-2 w-full">
+        <h3 className="text-card-text-title font-medium text-lg md:text-xl">{title}</h3>
 
-        <h1 className="text-card-text-title font-medium text-lg md:text-xl w-full">{ title }</h1>
+        <p className="text-card-text-description font-normal text-xs md:text-sm">{description}</p>
+      </header>
 
-        <h3 className="text-card-text-description font-normal text-xs md:text-sm">{ description }</h3>
-
-      </div>
-      
-      <Durations 
-        durations={durations}
-      />
+      <Durations durations={durations} />
 
       <Button />
-    </div>
+    </article>
   )
 }

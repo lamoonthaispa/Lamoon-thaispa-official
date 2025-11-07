@@ -22,7 +22,13 @@ export default function Features() {
   }
 
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2 py-16 px-4 md:px-8 lg:p-36 gap-20 justify-items-center">
+    <section
+      className="w-full grid grid-cols-1 lg:grid-cols-2 py-16 px-4 md:px-8 lg:p-36 gap-20 justify-items-center"
+      aria-labelledby="features-heading"
+    >
+      <h2 id="features-heading" className="sr-only">
+        Pourquoi choisir Lamoon Thaï Spa
+      </h2>
       {Object.values(features).map((feature, index) => (
         <FeatureCard
           key={index}

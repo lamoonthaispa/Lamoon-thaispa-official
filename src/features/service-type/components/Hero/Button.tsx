@@ -1,16 +1,12 @@
-import { ArrowRight } from "lucide-react"
-export default function Button({
-  buttonText
-}: {
-  buttonText: string
-}) {
+import { ArrowRight } from 'lucide-react'
+export default function Button({ buttonText }: { buttonText: string }) {
   return (
-    <button className="
-      w-full flex justify-center items-center py-3 
-      bg-service-detail-button-background text-service-detail-button-text
-    ">
-      <ArrowRight size={20} />
+    <button className='inline-flex justify-center items-center gap-3 py-3 px-12
+      bg-landing-hero-button-background text-landing-hero-button-text rounded-md
+      text-lg md:text-2xl
+    '>
       { buttonText }
+      <ArrowRight size={20} />
     </button>
   )
 }
