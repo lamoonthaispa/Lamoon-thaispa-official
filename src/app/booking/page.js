@@ -243,14 +243,14 @@ export default function BookingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Initialize from URL params
-  useEffect(() => {
+  /* useEffect(() => {
     if (serviceId) {
       const mappedType = serviceTypeMapping[serviceId];
       if (mappedType) {
         setSelectedMassageType(mappedType);
       }
     }
-  }, [serviceId]);
+  }, [serviceId]); */
 
   const selectedService = useMemo(() => {
     return DEFAULT_MASSAGE_TYPES.find(type => type.value === selectedMassageType);
@@ -368,7 +368,7 @@ export default function BookingPage() {
           <>
             <div className="w-full sm:w-1/2 relative aspect-video rounded-lg overflow-hidden">
               <Image
-                src={selectedService?.image || serviceImage || "/thaimassage.webp"}
+                src={selectedService?.image  || "/thaimassage.webp"}
                 alt={selectedService.label}
                 fill
                 className="object-cover"
