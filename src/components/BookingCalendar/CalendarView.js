@@ -278,7 +278,7 @@ export default function CalendarView({
                 const slotDate = new Date(day);
                 slotDate.setHours(hour, minute, 0, 0);
                 const status = getSlotStatus(slotDate);
-                const isSelected = selectedSlot?.getTime() === slotDate.getTime();
+                const isSelected = selectedSlot instanceof Date && selectedSlot.getTime() === slotDate.getTime();
 
                 const slotClasses = [
                   "border-t border-r border-gray-400 flex items-center justify-center text-xs text-[#757575]",

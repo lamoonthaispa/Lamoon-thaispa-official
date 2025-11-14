@@ -236,7 +236,7 @@ export default function BookingPage() {
       }
     }
   }, [selectedMassageType]);
-  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [selectedSlot, setSelectedSlot] = useState<Date | null>(null);
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
