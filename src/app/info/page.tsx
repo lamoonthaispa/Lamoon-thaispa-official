@@ -1,4 +1,3 @@
-"use client";
 import type { Metadata } from "next";
 import InfoPage from "@/features/info/pages/Info";
 import {
@@ -9,7 +8,6 @@ import {
   SITE_URL
 } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: INFO_PAGE_TITLE,
@@ -31,6 +29,8 @@ export const metadata: Metadata = {
     images: [OPEN_GRAPH_IMAGE],
   },
 };
+
+export const dynamic = "force-dynamic";
 
 export default function Info() {
   return <InfoPage />;
