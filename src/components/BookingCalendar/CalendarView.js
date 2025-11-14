@@ -131,64 +131,45 @@ export default function CalendarView({
       (prev) => new Date(new Date(prev).setDate(prev.getDate() + 7))
     );
 
-  const getSlotStatus = (date) => {
-    const now = new Date();
-    if (Array.isArray(fetchedBookedSlots) && fetchedBookedSlots.length) {
+    const getSlotStatus = (date) => {
+      const now = new Date();
       const slotStart = new Date(date);
       const slotEnd = new Date(slotStart.getTime() + selectedDuration * 60 * 1000);
       const isPast = slotEnd <= now;
+    
       const closing = new Date(slotStart);
       closing.setHours(endTime, 0, 0, 0);
       const closingWithOvertime = new Date(closing.getTime() + overtimeMinutes * 60 * 1000);
       const isTooLate = slotEnd > closingWithOvertime;
-
+    
       let count = 0;
-      for (const b of fetchedBookedSlots) {
-        if (!b || !b.slot) continue;
-        const bookingStart = new Date(b.slot);
-        const bookingDuration = Number(b.duration) || 0;
-        const bookingEnd = new Date(bookingStart.getTime() + bookingDuration * 60 * 1000);
-        if (bookingStart < slotEnd && bookingEnd > slotStart) {
-          count += 1;
+    
+      // 1. Array format: [{ slot: "...", duration: 60 }, ...]
+      if (Array.isArray(fetchedBookedSlots) && fetchedBookedSlots.length > 0) {
+        for (const b of fetchedBookedSlots) {
+          if (!b || !b.slot) continue;
+          const bookingStart = new Date(b.slot);
+          const bookingDuration = Number(b.duration) || 0;
+          const bookingEnd = new Date(bookingStart.getTime() + bookingDuration * 60 * 1000);
+          if (bookingStart < slotEnd && bookingEnd > slotStart) {
+            count += 1;
+          }
         }
       }
+      // 2. Object format: { "2025-11-14T11:00:00.000Z": 2 }
+      else if (fetchedBookedSlots && typeof fetchedBookedSlots === 'object' && !Array.isArray(fetchedBookedSlots)) {
+        count = fetchedBookedSlots[date.toISOString()] || 0;
+      }
+      // 3. Fallback: bookedSlots prop (for static preview)
+      else {
+        count = bookedSlots[date.toISOString()] || 0;
+      }
+    
       const isFull = count >= bookingLimit;
       const isBooked = count > 0;
+    
       return { count, isBooked, isFull, isPast, isTooLate };
-    }
-
-    let count = 0;
-if (Array.isArray(fetchedBookedSlots) && fetchedBookedSlots.length > 0) {
-  // Handle array format
-  const slotStart = new Date(date);
-  const slotEnd = new Date(slotStart.getTime() + selectedDuration * 60 * 1000);
-  for (const b of fetchedBookedSlots) {
-    if (!b || !b.slot) continue;
-    const bookingStart = new Date(b.slot);
-    const bookingDuration = Number(b.duration) || 0;
-    const bookingEnd = new Date(bookingStart.getTime() + bookingDuration * 60 * 1000);
-    if (bookingStart < slotEnd && bookingEnd > slotStart) {
-      count += 1;
-    }
-  }
-} else if (fetchedBookedSlots && typeof fetchedBookedSlots === 'object' && !Array.isArray(fetchedBookedSlots)) {
-  // Handle object format
-  count = fetchedBookedSlots[date.toISOString()] || 0;
-} else {
-  // Fallback to bookedSlots prop
-  count = bookedSlots[date.toISOString()] || 0;
-}
-    const slotStart = new Date(date);
-    const slotEnd = new Date(slotStart.getTime() + selectedDuration * 60 * 1000);
-    const isPast = slotEnd <= now;
-    const closing = new Date(slotStart);
-    closing.setHours(endTime, 0, 0, 0);
-    const closingWithOvertime = new Date(closing.getTime() + overtimeMinutes * 60 * 1000);
-    const isTooLate = slotEnd > closingWithOvertime;
-    const isFull = count >= bookingLimit;
-    const isBooked = count > 0;
-    return { count, isBooked, isFull, isPast, isTooLate };
-  };
+    };
 
   const handleSlotClick = (day, hour, minute) => {
     const clickedDate = new Date(day);
