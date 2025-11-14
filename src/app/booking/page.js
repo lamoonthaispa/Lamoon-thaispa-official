@@ -6,8 +6,7 @@ import { ArrowLeft, MapPin, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import CalendarView from "@/components/BookingCalendar/CalendarView";
 export const dynamic = "force-dynamic";
-
-
+export const revalidate = 0;
 const DEFAULT_MASSAGE_TYPES = [
   // Nos Massages
   { 
@@ -225,16 +224,27 @@ export default function BookingPage() {
   
   // Reset duration when service changes and has locked duration
   useEffect(() => {
-    const service = DEFAULT_MASSAGE_TYPES.find(type => type.value === selectedMassageType);
-    if (service?.lockedDuration) {
-      setSelectedDuration(service.lockedDuration);
-    } else if (selectedMassageType) {
-      // Set to first available duration
-      const availableDurations = Object.keys(service?.prices || {}).map(Number).sort((a, b) => a - b);
-      if (availableDurations.length > 0) {
-        setSelectedDuration(availableDurations[0]);
-      }
+    if (!selectedMassageType) {
+      // No service selected yet → keep default duration
+      return;
     }
+  
+    const service = DEFAULT_MASSAGE_TYPES.find(
+      (type) => type.value === selectedMassageType
+    );
+  
+    if (!service) return;
+  
+    if (service.lockedDuration) {
+      setSelectedDuration(service.lockedDuration);
+      return;
+    }
+  
+    const priceKeys = Object.keys(service.prices);
+    if (priceKeys.length === 0) return;
+  
+    const durations = priceKeys.map(Number).sort((a, b) => a - b);
+    setSelectedDuration(durations[0]);
   }, [selectedMassageType]);
   const [selectedSlot, setSelectedSlot] = useState<Date | null>(null);
   const [customerName, setCustomerName] = useState("");
@@ -312,15 +322,28 @@ export default function BookingPage() {
   };
 
   const durationOptions = useMemo(() => {
-    const selectedService = DEFAULT_MASSAGE_TYPES.find(type => type.value === selectedMassageType);
-    const lockedDuration = selectedService?.lockedDuration;
-    
-    // Si service lock duration, return only that duration
-    if (lockedDuration) {
-      return [{ value: lockedDuration, label: `${lockedDuration} minutes`, rowHeight: "h-10" }];
+    if (!selectedMassageType) {
+      return []; // Important: don't render duration options until service is picked
     }
-    
-    // Sinon, return all available durations based on service
+  
+    const service = DEFAULT_MASSAGE_TYPES.find(
+      (type) => type.value === selectedMassageType
+    );
+  
+    if (!service) return [];
+  
+    const { lockedDuration, prices } = service;
+  
+    if (lockedDuration) {
+      return [
+        {
+          value: lockedDuration,
+          label: `${lockedDuration} minutes`,
+          rowHeight: "h-10",
+        },
+      ];
+    }
+  
     const allDurations = [
       { value: 30, label: "30 minutes", rowHeight: "h-10" },
       { value: 45, label: "45 minutes", rowHeight: "h-10" },
@@ -330,13 +353,8 @@ export default function BookingPage() {
       { value: 300, label: "5h", rowHeight: "h-14" },
       { value: 600, label: "10h", rowHeight: "h-14" },
     ];
-    
-    // Filter durations based on available prices for selected service
-    if (selectedService && selectedService.prices) {
-      return allDurations.filter(d => selectedService.prices[d.value] !== undefined);
-    }
-    
-    return allDurations;
+  
+    return allDurations.filter((d) => prices[d.value] !== undefined);
   }, [selectedMassageType]);
 
   return (
@@ -364,43 +382,47 @@ export default function BookingPage() {
   
       {/* Service Card */}
       <div className="flex flex-col sm:flex-row bg-[#F7F6FA] p-3 sm:p-4 rounded-[12px] gap-4 sm:gap-6">
-        {selectedService && (
-          <>
-            <div className="w-full sm:w-1/2 relative aspect-video rounded-lg overflow-hidden">
-              <Image
-                src={selectedService?.image  || "/thaimassage.webp"}
-                alt={selectedService.label}
-                fill
-                className="object-cover"
-              />
-            </div>
-  
-            <div className="flex flex-col justify-center sm:w-1/2">
-              <h2 className="text-xl sm:text-2xl font-bold text-black mb-1">
-                {selectedService.label}
-              </h2>
-              <p className="text-sm text-[#757575] mb-3">
-                {Object.keys(selectedService.prices).map((dur, i, arr) => {
-                  const durNum = parseInt(dur);
-                  const label =
-                    durNum === 60
-                      ? "1h"
-                      : durNum === 90
-                      ? "1h30"
-                      : durNum === 120
-                      ? "2h"
-                      : durNum + "min";
-                  return label + (i < arr.length - 1 ? " / " : "");
-                })}
-              </p>
-              <div className="flex items-center gap-2 text-sm text-[#757575]">
-                <MapPin className="w-4 h-4 shrink-0" />
-                <span>Lamoon Thaï Spa 25 rue de turin, Paris 75008</span>
-              </div>
-            </div>
-          </>
-        )}
+  {selectedService && (
+    <>
+      <div className="w-full sm:w-1/2 relative aspect-video rounded-lg overflow-hidden">
+        <Image
+          src={selectedService.image || "/thaimassage.webp"}
+          alt={selectedService.label}
+          fill
+          className="object-cover"
+        />
       </div>
+
+      <div className="flex flex-col justify-center sm:w-1/2">
+        <h2 className="text-xl sm:text-2xl font-bold text-black mb-1">
+          {selectedService.label}
+        </h2>
+
+        {/* ← GUARDED DURATION LIST */}
+        {selectedService && Object.keys(selectedService.prices).length > 0 && (
+          <p className="text-sm text-[#757575] mb-3">
+            {Object.keys(selectedService.prices).map((dur, i, arr) => {
+              const durNum = parseInt(dur);
+              const label =
+                durNum === 60 ? "1h" :
+                durNum === 90 ? "1h30" :
+                durNum === 120 ? "2h" :
+                durNum === 300 ? "5h" :
+                durNum === 600 ? "10h" :
+                `${durNum}min`;
+              return label + (i < arr.length - 1 ? " / " : "");
+            })}
+          </p>
+        )}
+
+        <div className="flex items-center gap-2 text-sm text-[#757575]">
+          <MapPin className="w-4 h-4 shrink-0" />
+          <span>Lamoon Thaï Spa 25 rue de turin, Paris 75008</span>
+        </div>
+      </div>
+    </>
+  )}
+</div>
   
       {/* Booking Form */}
       <div className="flex flex-col lg:flex-row gap-6">

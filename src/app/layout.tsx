@@ -4,6 +4,7 @@ import { Kaisei_Decol } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
 import {
   GTM_ID,
   DEFAULT_DESCRIPTION,
@@ -14,6 +15,9 @@ import {
   SITE_NAME,
   SITE_URL
 } from "@/lib/seo";
+// app/layout.tsx  (add at the top, after imports)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 const kaiseiDecol = Kaisei_Decol({
   variable: "--font-kaisei-decol",
