@@ -1,11 +1,11 @@
 "use client";
-export const dynamic = "force-dynamic";
+
 import React, { useState, useEffect, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowLeft, MapPin, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import CalendarView from "@/components/BookingCalendar/CalendarView";
-
+export const dynamic = "force-dynamic";
 
 
 const DEFAULT_MASSAGE_TYPES = [
@@ -216,9 +216,9 @@ const serviceTypeMapping = {
 
 export default function BookingPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+ /* const searchParams = useSearchParams();
   const serviceId = searchParams.get('service');
-  const serviceImage = searchParams.get('image');
+  const serviceImage = searchParams.get('image'); */
   
   const [selectedMassageType, setSelectedMassageType] = useState("");
   const [selectedDuration, setSelectedDuration] = useState(60);

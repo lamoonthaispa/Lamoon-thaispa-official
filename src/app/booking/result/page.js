@@ -1,9 +1,11 @@
 "use client";
-export const dynamic = "force-dynamic";
+
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { CheckCircle, XCircle } from "lucide-react";
+
+export const dynamic = "force-dynamic";
 
 export default function BookingResultPage() {
   const router = useRouter();
@@ -12,7 +14,7 @@ export default function BookingResultPage() {
   const result = searchParams.get("checkout_result") || searchParams.get("result");
   const order_id = searchParams.get("order_id");
 
-  // ดึง booking info จาก query params
+  // Extract booking data from URL params
   const bookingDataFromParams = {
     booking: {
       slot: searchParams.get("slot"),
@@ -29,22 +31,46 @@ export default function BookingResultPage() {
     },
   };
 
-  const [status, setStatus] = useState(null);
-  const [bookingData, setBookingData] = useState(null);
+  const [status, setStatus] = useState<"loading" | "success" | "fail">("loading");
+  const [bookingData, setBookingData] = useState<any>(null);
 
+  // Helper: Safe date formatting
+  const formatDate = (iso) => {
+    if (!iso) return "—";
+    const date = new Date(iso);
+    return !isNaN(date.getTime()) ? date.toLocaleDateString("fr-FR") : "—";
+  };
+
+  const formatTime = (iso) => {
+    if (!iso) return "—";
+    const date = new Date(iso);
+    return !isNaN(date.getTime())
+      ? date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })
+      : "—";
+  };
+
+  // Set status based on result
   useEffect(() => {
-    // กำหนดสถานะ success / fail
     if (result === "success") {
       setStatus("success");
-      setBookingData(bookingDataFromParams); // ใช้ข้อมูลจาก param เลย
-    } else if (result === "fail" || result === "cancel") {
-      setStatus("fail");
+      setBookingData(bookingDataFromParams);
     } else {
       setStatus("fail");
     }
   }, [result]);
 
-  if (status === null) {
+  // Auto-redirect after 10 seconds on success
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => {
+        router.push("/");
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [status, router]);
+
+  // Loading state
+  if (status === "loading") {
     return (
       <div className="min-h-screen bg-[#FBF6EF] flex items-center justify-center">
         <p className="text-[#4F3921] animate-pulse">Chargement...</p>
@@ -52,6 +78,7 @@ export default function BookingResultPage() {
     );
   }
 
+  // Fail state
   if (status === "fail") {
     return (
       <div className="min-h-screen bg-[#FBF6EF] flex flex-col items-center justify-between">
@@ -81,13 +108,13 @@ export default function BookingResultPage() {
     );
   }
 
-  // --- success ---
+  // Success state
   const { booking, payment } = bookingData;
 
   return (
     <div className="min-h-screen bg-[#F6F1EA] flex flex-col items-center justify-between">
       <div className="flex flex-col w-full max-w-2xl px-4 sm:px-6 py-10">
-        <div className="bg-[#F6F1EA] p-6 sm:p-8 text-center ">
+        <div className="bg-[#F6F1EA] p-6 sm:p-8 text-center">
           <div className="flex justify-center mb-4">
             <div className="bg-green-100 rounded-full p-3">
               <CheckCircle className="w-12 h-12 text-green-600" />
@@ -99,30 +126,46 @@ export default function BookingResultPage() {
           </h1>
           <p className="text-[#7B6B55] text-sm sm:text-base mb-6">
             Merci pour votre réservation. Un e-mail de confirmation vous sera envoyé sous peu. <br />
-            Vous serez redirigé vers l’accueil dans 10 secondes.
+            <span className="font-medium">Redirection dans 10 secondes...</span>
           </p>
 
           <div className="bg-white border border-[#E5DDD2] rounded-lg shadow-sm overflow-hidden pl-5 text-left">
             <div className="flex flex-col sm:flex-row items-center justify-center">
-              <div className="sm:w-1/3 w-full flex items-center justify-center">
+              <div className="sm:w-1/3 w-full flex items-center justify-center p-4">
                 <Image
                   src="/lamoon_logo.png"
-                  alt="Massage Preview"
+                  alt="Lamoon Logo"
                   width={400}
                   height={200}
-                  className="w-full h-full object-contain "
+                  className="w-full h-auto max-h-48 object-contain"
                 />
               </div>
-              <div className="p-4 sm:p-6 flex-1 text-sm sm:text-base text-[#4F3921]">
-                <p className="font-medium mb-1">#{payment.order_id}</p>
-                <p><span className="font-semibold">Massage :</span> {booking.massageType || "—"}</p>
-                <p><span className="font-semibold">Client :</span> {booking.name || payment.fullname}</p>
-                <p><span className="font-semibold">Date :</span> {booking.slot ? new Date(booking.slot).toLocaleDateString() : "—"}</p>
-                <p><span className="font-semibold">Heure :</span> {booking.slot ? new Date(booking.slot).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}) : "—"}</p>
-                <p><span className="font-semibold">E-mail :</span> {booking.email}</p>
-                <p><span className="font-semibold">Téléphone :</span> {booking.phone}</p>
-                <p><span className="font-semibold">Paiement :</span> Carte bancaire</p>
-                <p><span className="font-semibold">Statut :</span> {payment.status}</p>
+              <div className="p-4 sm:p-6 flex-1 text-sm sm:text-base text-[#4F3921] space-y-1">
+                <p className="font-medium mb-2">#{payment.order_id || "—"}</p>
+                <p>
+                  <span className="font-semibold">Massage :</span> {booking.massageType || "—"}
+                </p>
+                <p>
+                  <span className="font-semibold">Client :</span> {booking.name || payment.fullname || "—"}
+                </p>
+                <p>
+                  <span className="font-semibold">Date :</span> {formatDate(booking.slot)}
+                </p>
+                <p>
+                  <span className="font-semibold">Heure :</span> {formatTime(booking.slot)}
+                </p>
+                <p>
+                  <span className="font-semibold">E-mail :</span> {booking.email || "—"}
+                </p>
+                <p>
+                  <span className="font-semibold">Téléphone :</span> {booking.phone || "—"}
+                </p>
+                <p>
+                  <span className="font-semibold">Paiement :</span> Carte bancaire
+                </p>
+                <p>
+                  <span className="font-semibold">Statut :</span> {payment.status || "Confirmé"}
+                </p>
               </div>
             </div>
           </div>
