@@ -6,7 +6,7 @@ import { ArrowLeft, MapPin, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import CalendarView from "@/components/BookingCalendar/CalendarView";
 export const dynamic = "force-dynamic";
-export const revalidate = 0;
+
 const DEFAULT_MASSAGE_TYPES = [
   // Nos Massages
   { 
@@ -225,7 +225,7 @@ export default function BookingPage() {
   // Reset duration when service changes and has locked duration
   useEffect(() => {
     if (!selectedMassageType) {
-      // No service selected yet → keep default duration
+      setSelectedDuration(60); // default fallback
       return;
     }
   
@@ -233,20 +233,29 @@ export default function BookingPage() {
       (type) => type.value === selectedMassageType
     );
   
-    if (!service) return;
+    if (!service?.prices) {
+      setSelectedDuration(60);
+      return;
+    }
   
     if (service.lockedDuration) {
       setSelectedDuration(service.lockedDuration);
       return;
     }
   
-    const priceKeys = Object.keys(service.prices);
-    if (priceKeys.length === 0) return;
+    const durations = Object.keys(service.prices)
+      .map(Number)
+      .filter(d => !isNaN(d))
+      .sort((a, b) => a - b);
   
-    const durations = priceKeys.map(Number).sort((a, b) => a - b);
+    if (durations.length === 0) {
+      setSelectedDuration(60);
+      return;
+    }
+  
     setSelectedDuration(durations[0]);
   }, [selectedMassageType]);
-  const [selectedSlot, setSelectedSlot] = useState<Date | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState(null);
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");

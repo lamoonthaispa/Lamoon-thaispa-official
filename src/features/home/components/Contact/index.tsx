@@ -10,7 +10,6 @@ export default function Contact() {
       aria-labelledby="contact-heading"
     >
       <Background />
-      <MapEmbed />
 
       <div className="flex flex-col gap-[24.15px] lg:gap-[30px] z-20">
         <header>

@@ -57,6 +57,13 @@ export default function CalendarView({
   selectedDuration = 60,
   overtimeMinutes = 30,
 }) {
+  if (!durationOptions.length) {
+    return (
+      <div className="bg-white p-6 rounded-2xl text-center text-gray-500">
+        Veuillez choisir un service pour voir les créneaux.
+      </div>
+    );
+  }
   const [currentDate, setCurrentDate] = useState(initialDate);
   const [fetchedBookedSlots, setFetchedBookedSlots] = useState({});
   const [isLoadingSlots, setIsLoadingSlots] = useState(false);
@@ -219,7 +226,10 @@ export default function CalendarView({
   };
 
   const today = new Date();
-  const currentDurationConfig = durationOptions.find(option => option.value === selectedDuration) || durationOptions[0];
+  const currentDurationConfig = useMemo(() => {
+    if (!durationOptions.length) return { rowHeight: "h-10" }; // safe fallback
+    return durationOptions.find(o => o.value === selectedDuration) ?? durationOptions[0];
+  }, [durationOptions, selectedDuration]);   
 
   return (
     <div className="bg-white p-4 sm:p-6 rounded-2xl w-full">
