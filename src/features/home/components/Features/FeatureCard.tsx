@@ -11,7 +11,7 @@ export default function FeatureCard({
     <article className="flex flex-col items-center gap-2 lg:gap-3 text-center">
       <span aria-hidden="true">{icon}</span>
 
-      <h3 className="text-landing-features-text-title font-medium text-2xl md:text-3xl lg:text-4xl">
+      <h3 className="text-landing-features-text-title font-medium text-xl md:text-2xl lg:text-3xl">
         {title}
       </h3>
 

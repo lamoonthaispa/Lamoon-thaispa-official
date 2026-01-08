@@ -11,8 +11,8 @@ interface GiveLoveKindnessIconProps {
 }
 
 export default function GiveLoveKindnessIcon({ 
-  width = 82, 
-  height = 82, 
+  width = 70, 
+  height = 70, 
   className = '', 
   alt = 'Give love kindness icon',
   onClick

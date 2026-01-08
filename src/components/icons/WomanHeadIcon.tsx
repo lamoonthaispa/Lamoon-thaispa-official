@@ -11,8 +11,8 @@ interface WomanHeadIconProps {
 }
 
 export default function WomanHeadIcon({ 
-  width = 150, 
-  height = 150, 
+  width = 100, 
+  height = 100, 
   className = '', 
   alt = 'Woman head icon',
   onClick

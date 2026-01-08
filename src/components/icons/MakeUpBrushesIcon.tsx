@@ -11,8 +11,8 @@ interface MakeUpBrushesIconProps {
 }
 
 export default function MakeUpBrushesIcon({ 
-  width = 82, 
-  height = 82, 
+  width = 70, 
+  height = 70, 
   className = '', 
   alt = 'Make up brushes icon',
   onClick

@@ -11,8 +11,8 @@ interface LeafIconProps {
 }
 
 export default function LeafIcon({ 
-  width = 82, 
-  height = 82, 
+  width = 70, 
+  height = 70, 
   className = '', 
   alt = 'Leaf icon',
   onClick

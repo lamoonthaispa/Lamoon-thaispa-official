@@ -10,12 +10,12 @@ export default function HomePage() {
   return (
     <main className="flex flex-col bg-background">
       <Hero />
-      <Features />
       <Promotion />
       <SectionIntro />
       <GallerySlider />
       <Services />
       <Contact />
+      <Features />
     </main>
   )
 }

@@ -11,8 +11,8 @@ interface HerbsLeavesIconProps {
 }
 
 export default function HerbsLeavesIcon({ 
-  width = 150, 
-  height = 150, 
+  width = 100, 
+  height = 100, 
   className = '', 
   alt = 'Herbs leaves icon',
   onClick

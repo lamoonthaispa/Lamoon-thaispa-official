@@ -7,9 +7,9 @@ export type SocialLink = {
 };
 
 const BASE_URLS: Record<SocialPlatform, string> = {
-  facebook: "https://www.facebook.com/",
-  instagram: "https://www.instagram.com/",
-  tiktok: "https://www.tiktok.com/",
+  facebook: "https://www.facebook.com/share/1BqZpkU887",
+  instagram: "https://www.instagram.com/lamoonthai_spa?igsh=MWNjbWhvMGl6NXk4bg%3D%3D",
+  tiktok: "https://www.tiktok.com/@lamoonthaspa",
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [

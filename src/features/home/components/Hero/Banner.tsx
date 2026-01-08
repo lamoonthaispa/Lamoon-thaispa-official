@@ -27,7 +27,6 @@ export default function Banner() {
 
       <div className="relative z-30 flex flex-col items-center justify-center gap-6 px-5">
         <Title />
-        <Button />
       </div>
     </div>
   )

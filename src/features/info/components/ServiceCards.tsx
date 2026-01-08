@@ -7,6 +7,20 @@ import Divider from "./Divider";
 import Card from "@/components/Card";
 import { mapPriceToDurations, type DurationPriceMap } from "@/lib/durations";
 
+const serviceSlugMap: Record<string, string> = {
+  "Nos Soins du visage": "soin-du-visage",
+  "Massages": "massage",
+  "Epilation cire orientale (sucre)": "cire-orientale",
+  "Teinture des cils et sourcils": "teinture",
+  "Nos Gommages": "gommage",
+};
+
+function mapServiceToSlug(input: string): string {
+  return serviceSlugMap[input] ?? input.toLowerCase().replace(/\s+/g, "-");
+}
+
+type ServicesDetailKeys = keyof typeof messages['services_detail'];
+
 export default function Cards({
   serviceType,
   cards
@@ -24,6 +38,9 @@ export default function Cards({
     .toLowerCase()
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/gi, "")}`
+  
+  const slug = mapServiceToSlug(serviceType) as ServicesDetailKeys;
+  const image = messages.services_detail[slug]?.hero?.image || "/images/card-mock.jpg";
 
   return (
     <section
@@ -65,7 +82,7 @@ export default function Cards({
                   type={card.type}
                   title={card.title}
                   description={card.description}
-                  image="/images/card-mock.jpg"
+                  image={image}
                   durations={mapPriceToDurations(card.prices)}
                 />
               </SwiperSlide>
@@ -80,7 +97,7 @@ export default function Cards({
               type={card.type}
               title={card.title}
               description={card.description}
-              image="/images/card-mock.jpg"
+              image={image}
               durations={mapPriceToDurations(card.prices)}
             />
           ))}

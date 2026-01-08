@@ -28,11 +28,6 @@
         "description": "Créez un moment de sérénité et de détente absolue pour le corps et l'esprit.",
         "icon": "CandleIcon"
       },
-      "3": {
-        "title": "Expérience cinq étoiles",
-        "description": "Des standards élevés et la satisfaction reconnue de nombreux clients.",
-        "icon": "SpaCreamPotIcon"
-      },
       "4": {
         "title": "Ingrédients naturels",
         "description": "Doux pour la peau, composés exclusivement d'ingrédients naturels.",
@@ -58,24 +53,24 @@
           "image": "/images/massage.jpg"
         },
         "2": {
-          "type": "Gommages",
-          "title": "Gommages accompagné d’un massage",
+          "type": "Massages",
+          "title": "Massage aux huiles chaudes Coco, Monoï, Balinaise, Thé vert",
           "description": "",
           "durations": [
-            { "time": "30min", "price": "-" },
-            { "time": "1h", "price": "99€" },
-            { "time": "1h30", "price": "139€" }
+            { "time": "30min", "price": "55€" },
+            { "time": "1h", "price": "85€" },
+            { "time": "1h30", "price": "120€" }
           ],
           "image": "/images/gommage.png"
         },
         "3": {
           "type": "Massages",
-          "title": "Massage tête et épaules",
-          "description": "Soulage les tensions accumulées du cou, des épaules et du cuir chevelu.",
+          "title": "Massage aux huiles",
+          "description": "Un massage fluide et relaxant pour apaiser le corps et l'esprit.",
           "durations": [
             { "time": "30min", "price": "49€" },
-            { "time": "1h", "price": "-" },
-            { "time": "1h30", "price": "-" }
+            { "time": "1h", "price": "79€" },
+            { "time": "1h30", "price": "110€" }
           ],
           "image": "/images/massage.jpg"
         }

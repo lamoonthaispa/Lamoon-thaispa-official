@@ -69,6 +69,13 @@ const DEFAULT_MASSAGE_TYPES = [
     prices: { 30: 45, 60: 75, 90: 100 }
   },
   { 
+    value: "deep-thai", 
+    label: "Massage Deep Thaï ", 
+    description: "Massage deep thaïlandais",
+    category: "massage",
+    prices: { 60: 80 }
+  },
+  { 
     value: "oil", 
     label: "Massage aux huiles", 
     description: "Massage aux huiles essentielles",

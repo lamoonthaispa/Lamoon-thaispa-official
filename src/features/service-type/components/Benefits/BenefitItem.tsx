@@ -29,7 +29,7 @@ export default function BenefitItem({
   
   return (
     <li className="w-full flex justify-start items-center
-      gap-8 lg:gap-10
+      gap-4 lg:gap-10
     ">
       {Icon && <Icon aria-hidden="true" />}
       <p className="text-service-detail-benefits-text text-[15px] md:text-[20px] lg:text-[26px]">{label}</p>

@@ -10,6 +10,22 @@ export const dynamic = "force-dynamic";
 const DEFAULT_MASSAGE_TYPES = [
   // Nos Massages
   { 
+    value: "Massage aux huiles chaudes", 
+    label: "Massage aux huiles chaudes", 
+    description: "Coco, Monoï, Balinaise, Thé vert",
+    category: "massage",
+    prices: { 30: 55, 60: 85, 90: 120 },
+    image: "/massage.jpg"
+  },
+  { 
+    value: "Massage Deep Thaï", 
+    label: "Massage Deep Thaï", 
+    description: "Massage deep thaïlandais",
+    category: "massage",
+    prices: {  60: 80 , 90 : 110 },
+    image: "/massage.jpg"
+  },
+  { 
     value: "Massage Thaï Traditionnel", 
     label: "Massage Thaï Traditionnel", 
     description: "Massage traditionnel thaïlandais",
@@ -26,19 +42,11 @@ const DEFAULT_MASSAGE_TYPES = [
     image: "/massage.jpg"
   },
   { 
-    value: "Massage aux huiles chaudes", 
-    label: "Massage aux huiles chaudes", 
-    description: "Coco, Monoï, Balinaise, Thé vert",
+    value: "Massage tête et épaules", 
+    label: "Massage tête et épaules", 
+    description: "Massage spécifique de la tête et des épaules",
     category: "massage",
-    prices: { 30: 55, 60: 85, 90: 120 },
-    image: "/massage.jpg"
-  },
-  { 
-    value: "Massage à la bougie", 
-    label: "Massage à la bougie", 
-    description: "Massage à la bougie relaxant",
-    category: "massage",
-    prices: { 30: 59, 60: 95, 90: 130 },
+    prices: { 30: 49 },
     image: "/massage.jpg"
   },
   { 
@@ -50,28 +58,11 @@ const DEFAULT_MASSAGE_TYPES = [
     image: "/massage.jpg"
   },
   { 
-    value: "Massage tête et épaules", 
-    label: "Massage tête et épaules", 
-    description: "Massage spécifique de la tête et des épaules",
+    value: "Massage à la bougie", 
+    label: "Massage à la bougie", 
+    description: "Massage à la bougie relaxant",
     category: "massage",
-    prices: { 30: 49 },
-    image: "/massage.jpg"
-  },
-  // Abonnements massage
-  { 
-    value: "Abonnement massage 5h", 
-    label: "Abonnement massage 5h", 
-    description: "Forfait 5 heures de massage",
-    category: "abonnement",
-    prices: { 300: 350 },
-    image: "/massage.jpg"
-  },
-  { 
-    value: "Abonnement massage 10h", 
-    label: "Abonnement massage 10h", 
-    description: "Forfait 10 heures de massage",
-    category: "abonnement",
-    prices: { 600: 590 },
+    prices: { 30: 59, 60: 95, 90: 130 },
     image: "/massage.jpg"
   },
   // Nos Gommages
@@ -88,7 +79,7 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Gommages accompagné d'un massage", 
     description: "Gommage avec massage relaxant",
     category: "gommage",
-    prices: { 60: 99, 90: 139 },
+    prices: { 60: 99, 90: 139 , 120 : 175 },
     image: "/gommage.jpg"
   },
   // Nos Soins du visage
@@ -126,30 +117,42 @@ const DEFAULT_MASSAGE_TYPES = [
   },
   // Épilation Femme
   { value: "Epilation - Jambes entière (Femme)", label: "Epilation - Jambes entière (Femme)", description: "Epilation cire orientale - Jambes entière", category: "epilation", lockedDuration: 60, prices: { 60: 29 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Cuisses ou demi-jambes (Femme)", label: "Epilation - Cuisses ou demi-jambes (Femme)", description: "Epilation cire orientale - Cuisses ou demi-jambes", category: "epilation", lockedDuration: 60, prices: { 60: 23 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Aisselles (Femme)", label: "Epilation - Aisselles (Femme)", description: "Epilation cire orientale - Aisselles", category: "epilation", lockedDuration: 60, prices: { 60: 15 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Maillot simple (Femme)", label: "Epilation - Maillot simple (Femme)", description: "Epilation cire orientale - Maillot simple", category: "epilation", lockedDuration: 60, prices: { 60: 15 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Maillot semi-intégral (Femme)", label: "Epilation - Maillot semi-intégral (Femme)", description: "Epilation cire orientale - Maillot semi-intégral", category: "epilation", lockedDuration: 60, prices: { 60: 27 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Maillot intégral (Femme)", label: "Epilation - Maillot intégral (Femme)", description: "Epilation cire orientale - Maillot intégral", category: "epilation", lockedDuration: 60, prices: { 60: 35 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Avant-bras (Femme)", label: "Epilation - Avant-bras (Femme)", description: "Epilation cire orientale - Avant-bras", category: "epilation", lockedDuration: 60, prices: { 60: 23 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Sourcils (Femme)", label: "Epilation - Sourcils (Femme)", description: "Epilation cire orientale - Sourcils", category: "epilation", lockedDuration: 60, prices: { 60: 12 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Remodeling sourcils (Femme)", label: "Epilation - Remodeling sourcils (Femme)", description: "Epilation cire orientale - Remodeling sourcils", category: "epilation", lockedDuration: 60, prices: { 60: 20 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Menton (Femme)", label: "Epilation - Menton (Femme)", description: "Epilation cire orientale - Menton", category: "epilation", lockedDuration: 60, prices: { 60: 10 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Lèvres (Femme)", label: "Epilation - Lèvres (Femme)", description: "Epilation cire orientale - Lèvres", category: "epilation", lockedDuration: 60, prices: { 60: 10 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Visage entier (Femme)", label: "Epilation - Visage entier (Femme)", description: "Epilation cire orientale - Visage entier", category: "epilation", lockedDuration: 60, prices: { 60: 25 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Bras entier (Femme)", label: "Epilation - Bras entier (Femme)", description: "Epilation cire orientale - Bras entier", category: "epilation", lockedDuration: 60, prices: { 60: 29 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Fessier (Femme)", label: "Epilation - Fessier (Femme)", description: "Epilation cire orientale - Fessier", category: "epilation", lockedDuration: 60, prices: { 60: 19 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Sillon interfessier (Femme)", label: "Epilation - Sillon interfessier (Femme)", description: "Epilation cire orientale - Sillon interfessier", category: "epilation", lockedDuration: 60, prices: { 60: 15 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Cuisses (Femme)", label: "Epilation - Cuisses(Femme)", description: "Epilation cire orientale - Cuisses", category: "epilation", lockedDuration: 30, prices: { 30: 23 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Demi-jambes (Femme)", label: "Epilation - Demi-jambes (Femme)", description: "Epilation cire orientale - Demi-jambes", category: "epilation", lockedDuration: 30, prices: { 30: 23 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Avant-bras (Femme)", label: "Epilation - Avant-bras (Femme)", description: "Epilation cire orientale - Avant-bras", category: "epilation", lockedDuration: 30, prices: { 30: 23 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Bras entier (Femme)", label: "Epilation - Bras entier (Femme)", description: "Epilation cire orientale - Bras entier", category: "epilation", lockedDuration: 45, prices: { 45: 29 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Bas du dos/Bas du Ventre (Femme)", label: "Epilation - Bas du dos/Bas du Ventre (Femme)", description: "Epilation cire orientale - Bas du dos/Bas du Ventre", category: "epilation", lockedDuration: 30, prices: { 30: 23 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Dos complet (Femme)", label: "Epilation - Dos complet (Femme)", description: "Epilation cire orientale - Dos complet", category: "epilation", lockedDuration: 30, prices: { 30: 23 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Ventre complet (Femme)", label: "Epilation - Ventre complet (Femme)", description: "Epilation cire orientale - Ventre complet", category: "epilation", lockedDuration: 30, prices: { 30: 35 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Aisselles (Femme)", label: "Epilation - Aisselles (Femme)", description: "Epilation cire orientale - Aisselles", category: "epilation", lockedDuration: 30, prices: { 30: 15 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Sourcils (Femme)", label: "Epilation - Sourcils (Femme)", description: "Epilation cire orientale - Sourcils", category: "epilation", lockedDuration: 30, prices: { 30: 12 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Lèvres (Femme)", label: "Epilation - Lèvres (Femme)", description: "Epilation cire orientale - Lèvres", category: "epilation", lockedDuration: 30, prices: { 30: 10 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Menton (Femme)", label: "Epilation - Menton (Femme)", description: "Epilation cire orientale - Menton", category: "epilation", lockedDuration: 30, prices: { 30: 10 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Narines (Femme)", label: "Epilation - Narines (Femme)", description: "Epilation cire orientale - Narines", category: "epilation", lockedDuration: 30, prices: { 30: 5 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Visage entier (Femme)", label: "Epilation - Visage entier (Femme)", description: "Epilation cire orientale - Visage entier", category: "epilation", lockedDuration: 30, prices: { 30: 25 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Remodeling sourcils (Femme)", label: "Epilation - Remodeling sourcils (Femme)", description: "Epilation cire orientale - Remodeling sourcils", category: "epilation", lockedDuration: 30, prices: { 30: 20 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Maillot intégral (Femme)", label: "Epilation - Maillot intégral (Femme)", description: "Epilation cire orientale - Maillot intégral", category: "epilation", lockedDuration: 30, prices: { 30: 35 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Maillot semi-intégral (Femme)", label: "Epilation - Maillot semi-intégral (Femme)", description: "Epilation cire orientale - Maillot semi-intégral", category: "epilation", lockedDuration: 30, prices: { 30: 27 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Maillot simple (Femme)", label: "Epilation - Maillot simple (Femme)", description: "Epilation cire orientale - Maillot simple", category: "epilation", lockedDuration: 30, prices: { 30: 15 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Fessier (Femme)", label: "Epilation - Fessier (Femme)", description: "Epilation cire orientale - Fessier", category: "epilation", lockedDuration: 30, prices: { 30: 19 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Sillon interfessier (Femme)", label: "Epilation - Sillon interfessier (Femme)", description: "Epilation cire orientale - Sillon interfessier", category: "epilation", lockedDuration: 30, prices: { 30: 15 }, image: "/cire-orientale.png" },
 
-  // Épilation Homme
-  { value: "Epilation - Jambes/Bras/Dos (Homme)", label: "Epilation - Jambes/Bras/Dos (Homme)", description: "Epilation cire orientale - Jambes/Bras/Dos", category: "epilation", lockedDuration: 60, prices: { 60: 45 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Aisselles (Homme)", label: "Epilation - Aisselles (Homme)", description: "Epilation cire orientale - Aisselles", category: "epilation", lockedDuration: 60, prices: { 60: 20 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Sourcils/épaules (Homme)", label: "Epilation - Sourcils/épaules (Homme)", description: "Epilation cire orientale - Sourcils/épaules", category: "epilation", lockedDuration: 60, prices: { 60: 20 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Jambes entières (Homme)", label: "Epilation - Jambes entières (Homme)", description: "Epilation cire orientale - Jambes entières", category: "epilation", lockedDuration: 60, prices: { 60: 45 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Demi-bras (Homme)", label: "Epilation - Demi-bras (Homme)", description: "Epilation cire orientale - Demi-bras", category: "epilation", lockedDuration: 60, prices: { 60: 25 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Torse (Homme)", label: "Epilation - Torse (Homme)", description: "Epilation cire orientale - Torse", category: "epilation", lockedDuration: 60, prices: { 60: 40 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Maillot simple (Homme)", label: "Epilation - Maillot simple (Homme)", description: "Epilation cire orientale - Maillot simple", category: "epilation", lockedDuration: 60, prices: { 60: 35 }, image: "/cire-orientale.png" },
-  { value: "Epilation - Maillot intégrale (Homme)", label: "Epilation - Maillot intégrale (Homme)", description: "Epilation cire orientale - Maillot intégrale", category: "epilation", lockedDuration: 60, prices: { 60: 60 }, image: "/cire-orientale.png" },
+  // Épilation HommeBras 
+  { value: "Epilation - Bras entières (Homme)", label: "Epilation - Bras entier (Homme)", description: "Epilation cire orientale - Bras entier", category: "epilation", lockedDuration: 30, prices: { 30: 45 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Aisselles (Homme)", label: "Epilation - Aisselles (Homme)", description: "Epilation cire orientale - Aisselles", category: "epilation", lockedDuration: 30, prices: { 30: 20 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Sourcils (Homme)", label: "Epilation - Sourcils (Homme)", description: "Epilation cire orientale - Sourcils", category: "epilation", lockedDuration: 30, prices: { 30: 20 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Narines (Homme)", label: "Epilation - Narines (Homme)", description: "Epilation cire orientale - Narines", category: "epilation", lockedDuration: 30, prices: { 30: 12}, image: "/cire-orientale.png" },
+  { value: "Epilation - Jambes-entières (Homme)", label: "Epilation - Jambes-entières (Homme)", description: "Epilation cire orientale - Jambes-entières", category: "epilation", lockedDuration: 45, prices: { 45: 45 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Demi-Jambes OU Demi bras (Homme)", label: "Epilation - Demi-Jambes OU Demi bras (Homme)", description: "Epilation cire orientale - Demi-Jambes OU Demi bras", category: "epilation", lockedDuration: 30, prices: { 30: 35 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Torse (Homme)", label: "Epilation - Torse (Homme)", description: "Epilation cire orientale - Torse", category: "epilation", lockedDuration: 30, prices: { 30: 40 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Ventre (Homme)", label: "Epilation - Ventre (Homme)", description: "Epilation cire orientale - Ventre", category: "epilation", lockedDuration: 30, prices: { 30: 25 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Nuque (Homme)", label: "Epilation - Nuque (Homme)", description: "Epilation cire orientale - Nuque", category: "epilation", lockedDuration: 30, prices: { 30: 30 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Dos (Homme)", label: "Epilation - Dos (Homme)", description: "Epilation cire orientale - Dos", category: "epilation", lockedDuration: 30, prices: { 30: 45 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Epaules (Homme)", label: "Epilation - Epaules (Homme)", description: "Epilation cire orientale - Dos", category: "epilation", lockedDuration: 30, prices: { 30: 20 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Maillot intégrale (Homme)", label: "Epilation - Maillot intégrale (Homme)", description: "Epilation cire orientale - Maillot intégrale", category: "epilation", lockedDuration: 30, prices: { 30: 60 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Maillot simple (Homme)", label: "Epilation - Maillot simple (Homme)", description: "Epilation cire orientale - Maillot simple", category: "epilation", lockedDuration: 30, prices: { 30: 35 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Fessier (Homme)", label: "Epilation - Fessier (Homme)", description: "Epilation cire orientale - Fessier", category: "epilation", lockedDuration: 30, prices: { 30: 20 }, image: "/cire-orientale.png" },
+  { value: "Epilation - Silicon interfessier (Homme)", label: "Epilation - Silicon interfessier (Homme)", description: "Epilation cire orientale - Silicon interfessier", category: "epilation", lockedDuration: 30, prices: { 30: 25 }, image: "/cire-orientale.png" },
 
   // Teinture
   { value: "Teinture des cils ou sourcils", label: "Teinture des cils ou sourcils", description: "Teinture des cils ou sourcils", category: "teinture", prices: { 30: 20 }, image: "/teinture.jpg" },

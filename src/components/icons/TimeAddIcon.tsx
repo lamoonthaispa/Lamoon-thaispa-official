@@ -11,8 +11,8 @@ interface TimeAddIconProps {
 }
 
 export default function TimeAddIcon({ 
-  width = 82, 
-  height = 82, 
+  width = 70, 
+  height = 70, 
   className = '', 
   alt = 'Time add icon',
   onClick
