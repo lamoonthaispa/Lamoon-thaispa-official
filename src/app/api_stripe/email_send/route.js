@@ -19,7 +19,7 @@ export async function POST(req) {
     } = body || {};
 
     const data = await resend.emails.send({
-      from: process.env.RESEND_FROM || 'lamoonThaispa <noreply@gucode.site>',
+      from: process.env.RESEND_FROM || 'Lamoon Thai Spa <booking@lamoonthaispa.fr>',
       to: Array.isArray(to) ? to : [to],
       subject,
       react: (
