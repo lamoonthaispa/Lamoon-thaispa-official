@@ -27,11 +27,6 @@
         "title": "Relaxation et sérénité",
         "description": "Créez un moment de sérénité et de détente absolue pour le corps et l'esprit.",
         "icon": "CandleIcon"
-      },
-      "4": {
-        "title": "Ingrédients naturels",
-        "description": "Doux pour la peau, composés exclusivement d'ingrédients naturels.",
-        "icon": "HerbsLeavesIcon"
       }
     },
   
@@ -50,7 +45,7 @@
             { "time": "1h", "price": "75€" },
             { "time": "1h30", "price": "100€" }
           ],
-          "image": "/images/massage.jpg"
+          "image": "/images/1.jpg"
         },
         "2": {
           "type": "Massages",
@@ -61,7 +56,7 @@
             { "time": "1h", "price": "85€" },
             { "time": "1h30", "price": "120€" }
           ],
-          "image": "/images/gommage.png"
+          "image": "/images/2.jpg"
         },
         "3": {
           "type": "Massages",
@@ -72,7 +67,7 @@
             { "time": "1h", "price": "79€" },
             { "time": "1h30", "price": "110€" }
           ],
-          "image": "/images/massage.jpg"
+          "image": "/images/3.jpg"
         }
       }
     },

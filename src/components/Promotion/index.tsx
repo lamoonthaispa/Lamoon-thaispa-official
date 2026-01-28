@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 
 export default function Promotion() {
   const swiperRef = useRef<SwiperType | null>(null);
-  const images = Array.from({ length: 5 }, (_, i) => `/images/promotion/${i + 1}.png`);
+  const images = Array.from({ length: 6 }, (_, i) => `/images/promotion/${i + 1}.jpg`);
 
   return (
     <section
