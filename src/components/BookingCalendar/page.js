@@ -556,8 +556,14 @@ const BookingCalendar = ({
   };
 
   const internalSlotClickHandler = (day, hour, minute) => {
+    // สร้าง slot เป็นเวลาท้องถิ่น (Asia/Bangkok)
     const clickedDate = new Date(day);
     clickedDate.setHours(hour, minute, 0, 0);
+    // แปลงเป็น ISO string พร้อม timezone +07:00
+    const pad = (n) => n.toString().padStart(2, '0');
+    const iso = `${clickedDate.getFullYear()}-${pad(clickedDate.getMonth()+1)}-${pad(clickedDate.getDate())}T${pad(clickedDate.getHours())}:${pad(clickedDate.getMinutes())}:00+07:00`;
+    onSlotClick(iso);
+    setIsConfirmDialogOpen(true);
 
     if (getSlotStatus(clickedDate).isFull) return;
 
