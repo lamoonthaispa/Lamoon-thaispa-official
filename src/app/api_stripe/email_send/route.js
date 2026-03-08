@@ -1,6 +1,7 @@
 import { EmailTemplate } from '@/components/email-template/page';
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -18,20 +19,22 @@ export async function POST(req) {
       orderId = '',
     } = body || {};
 
+    const html = renderToStaticMarkup(
+      <EmailTemplate
+        firstName={firstName}
+        massageType={massageType}
+        duration={duration}
+        slot={slot}
+        price={price}
+        orderId={orderId}
+      />
+    );
+
     const data = await resend.emails.send({
       from: process.env.RESEND_FROM || 'Lamoon Thai Spa <booking@lamoonthaispa.fr>',
       to: Array.isArray(to) ? to : [to],
       subject,
-      react: (
-        <EmailTemplate
-          firstName={firstName}
-          massageType={massageType}
-          duration={duration}
-          slot={slot}
-          price={price}
-          orderId={orderId}
-        />
-      ),
+      html,
     });
 
     return NextResponse.json(data);
