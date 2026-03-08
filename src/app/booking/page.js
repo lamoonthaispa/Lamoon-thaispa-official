@@ -30,7 +30,7 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Massage Thaï Traditionnel", 
     description: "Massage traditionnel thaïlandais",
     category: "massage",
-    prices: { 30: 1, 60: 75, 90: 100 },
+    prices: { 30: 0.03, 60: 75, 90: 100 },
     image: "/massage.jpg"
   },
   { 
