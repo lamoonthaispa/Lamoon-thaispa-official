@@ -17,7 +17,7 @@ export function renderEmailTemplate({ firstName, massageType, duration, slot, pr
                 <tr><td style="padding:6px 0;color:#666;">Service</td><td style="padding:6px 0;">${massageType || '-'}</td></tr>
                 <tr><td style="padding:6px 0;color:#666;">Durée</td><td style="padding:6px 0;">${duration ? `${duration} minutes` : '-'}</td></tr>
                 <tr><td style="padding:6px 0;color:#666;">Date et heure</td><td style="padding:6px 0;">${slot || '-'}</td></tr>
-                <tr><td style="padding:6px 0;color:#666;">Prix</td><td style="padding:6px 0;"><strong style="color:#0a7f2e;">${price ? `${price} THB` : '-'}</strong></td></tr>
+                <tr><td style="padding:6px 0;color:#666;">Prix</td><td style="padding:6px 0;"><strong style="color:#0a7f2e;">${price ? `${price} €` : '-'}</strong></td></tr>
               </tbody>
             </table>
           </div>
