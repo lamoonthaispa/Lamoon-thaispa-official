@@ -3,6 +3,7 @@ import Stripe from 'stripe';
 import { PrismaClient } from '@prisma/client';
 import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/email-template/page';
+import { renderToStaticMarkup } from 'react-dom/server';
 const prisma = new PrismaClient();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -60,20 +61,21 @@ export const POST = async (req) => {
                 weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
               });
               const price = md.price || '';
+              const html = renderToStaticMarkup(
+                <EmailTemplate
+                  firstName={md.name}
+                  massageType={md.massageType}
+                  duration={md.duration}
+                  slot={slotLocal}
+                  price={price}
+                  orderId={md.order_id || ''}
+                />
+              );
               await resend.emails.send({
                 from: process.env.RESEND_FROM || 'Lamoon Thai Spa <booking@lamoonthaispa.fr>',
                 to: [md.email],
                 subject: 'Confirmation de réservation - lamoonThaispa',
-                react: (
-                  <EmailTemplate
-                    firstName={md.name}
-                    massageType={md.massageType}
-                    duration={md.duration}
-                    slot={slotLocal}
-                    price={price}
-                    orderId={md.order_id || ''}
-                  />
-                ),
+                html,
               });
             } catch (mailErr) {
               console.error('Failed to send confirmation email:', mailErr);
