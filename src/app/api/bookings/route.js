@@ -43,13 +43,12 @@ export async function POST(request) {
     }
 
     // ตรวจสอบว่า slot มี timezone หรือไม่ ถ้าไม่มีให้เพิ่ม +07:00
-    let slotWithTZ = slot
-    if (typeof slot === 'string' && !slot.match(/([+-]\d{2}:\d{2}|Z)$/)) {
-      slotWithTZ = slot + '+07:00'
-    }
+    // บวกเวลา +7 ชั่วโมง (Asia/Bangkok) ก่อนบันทึก
+    let slotDate = new Date(slot);
+    slotDate.setHours(slotDate.getHours() + 7);
     const created = await prisma.booking.create({
       data: {
-        slot: new Date(slotWithTZ),
+        slot: slotDate,
         duration: Number(duration),
         massageType,
         name,
