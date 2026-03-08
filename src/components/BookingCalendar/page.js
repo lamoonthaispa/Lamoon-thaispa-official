@@ -580,7 +580,7 @@ const BookingCalendar = ({
       return;
     }
     const payload = {
-      slot: selectedSlot.toISOString(),
+      slot: selectedSlot,
       duration: selectedDuration,
       massageType: selectedMassageType,
       name: customerName,

@@ -292,7 +292,7 @@ export default function BookingPage() {
     try {
       setIsSubmitting(true);
       const payload = {
-        slot: selectedSlot.toISOString(),
+        slot: selectedSlot,
         duration: selectedDuration,
         massageType: selectedMassageType,
         name: customerName,
