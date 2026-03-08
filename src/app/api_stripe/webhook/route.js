@@ -61,7 +61,7 @@ export const POST = async (req) => {
               });
               const price = md.price || '';
               await resend.emails.send({
-                from: process.env.RESEND_FROM || 'lamoonThaispa <noreply@gucode.site>',
+                from: process.env.RESEND_FROM || 'Lamoon Thai Spa <booking@lamoonthaispa.fr>',
                 to: [md.email],
                 subject: 'Confirmation de réservation - lamoonThaispa',
                 react: (
