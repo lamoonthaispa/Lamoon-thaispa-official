@@ -579,8 +579,15 @@ const BookingCalendar = ({
       alert("กรุณากรอกข้อมูลให้ครบถ้วน");
       return;
     }
+    // ส่ง slot เป็น ISO string พร้อม timezone +07:00
+    let slotString = '';
+    if (selectedSlot) {
+      // ถ้า selectedSlot เป็น Date ให้แปลงเป็น ISO string แล้วเติม +07:00
+      const iso = selectedSlot.toISOString().slice(0, 19); // YYYY-MM-DDTHH:mm:ss
+      slotString = iso + '+07:00';
+    }
     const payload = {
-      slot: selectedSlot,
+      slot: slotString,
       duration: selectedDuration,
       massageType: selectedMassageType,
       name: customerName,
