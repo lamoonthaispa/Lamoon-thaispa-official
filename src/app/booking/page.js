@@ -14,7 +14,7 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Massage aux huiles chaudes", 
     description: "Coco, Monoï, Balinaise, Thé vert",
     category: "massage",
-    prices: { 30: 55, 60: 85, 90: 120 },
+    prices: { 30: 55, 60: 85, 90: 12 },
     image: "/massage.jpg"
   },
   { 
