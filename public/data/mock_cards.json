@@ -360,13 +360,13 @@
     "title": "Fessier",
     "description": "Pour les hommes - Fessier",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 20, "1h": null, "1h30": null }
+    "prices": { "30m": 25, "1h": null, "1h30": null }
   },
   {
     "title": "Silicon interfessier",
     "description": "Pour les hommes - Silicon interfessier",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 25, "1h": null, "1h30": null }
+    "prices": { "30m": 20, "1h": null, "1h30": null }
   },
   {
     "title": "Teinture des cils et sourcils",
