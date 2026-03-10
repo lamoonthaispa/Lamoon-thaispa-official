@@ -4,24 +4,14 @@
     "description": "Détend le corps et rééquilibre l'énergie par des pressions et étirements thaïlandais.",
     "type": "Massages",
     "prices": {
-      "30m": 45,
-      "1h": 75,
-      "1h30": 100
+      "30m": 55,
+      "1h": 85,
+      "1h30": 120
     }
   },
   {
     "title": "Massage aux huiles",
     "description": "Un massage fluide et relaxant pour apaiser le corps et l'esprit.",
-    "type": "Massages",
-    "prices": {
-      "30m": 49,
-      "1h": 79,
-      "1h30": 110
-    }
-  },
-  {
-    "title": "Massage aux huiles chaudes Coco, Monoï, Balinaise, Thé vert",
-    "description": "Relaxation profonde avec huiles chaudes.",
     "type": "Massages",
     "prices": {
       "30m": 55,
@@ -30,13 +20,23 @@
     }
   },
   {
+    "title": "Massage aux huiles chaudes Coco, Monoï, Balinaise, Thé vert",
+    "description": "Relaxation profonde avec huiles chaudes.",
+    "type": "Massages",
+    "prices": {
+      "30m": 65,
+      "1h": 95,
+      "1h30": 130
+    }
+  },
+  {
     "title": "Massage Deep Thaï",
     "description": "Massage deep thaïlandais",
     "type": "Massages",
     "prices": {
-      "30m": null,
-      "1h": 80,
-      "1h30": 110
+      "30m": 65,
+      "1h": 95,
+      "1h30": 130
     }
   },
   {
@@ -44,9 +44,9 @@
     "description": "Une expérience enveloppante où la cire chaude nourrit et adoucit la peau.",
     "type": "Massages",
     "prices": {
-      "30m": 59,
-      "1h": 95,
-      "1h30": 130
+      "30m": null,
+      "1h": 105,
+      "1h30": 140
     }
   },
   {
@@ -54,8 +54,8 @@
     "description": "Stimule les points des pieds pour rétablir l'équilibre et la vitalité.",
     "type": "Massages",
     "prices": {
-      "30m": 55,
-      "1h": 85,
+      "30m": 65,
+      "1h": 95,
       "1h30": null
     }
   },
@@ -64,7 +64,7 @@
     "description": "Soulage les tensions accumulées du cou, des épaules et du cuir chevelu.",
     "type": "Massages",
     "prices": {
-      "30m": 49,
+      "30m": 55,
       "1h": null,
       "1h30": null
     }
@@ -74,8 +74,8 @@
     "description": "Détendez régulièrement votre cou, épaules et cuir chevelu, et libérez le stress quotidien grâce à nos abonnements massage.",
     "type": "Massages",
     "prices": {
-      "5h": 350,
-      "10h": 590,
+      "5h": 370,
+      "10h": 690,
       "15h": null
     }
   },
@@ -85,8 +85,8 @@
     "type": "Nos Gommages",
     "prices": {
       "30m": null,
-      "1h": 99,
-      "1h30": 139
+      "1h": 110,
+      "1h30": 145
     }
   },
   {
@@ -126,7 +126,7 @@
     "type": "Nos Soins du visage",
     "prices": {
       "30m": null,
-      "1h": 72,
+      "1h": 75,
       "1h30": null
     }
   },
@@ -136,7 +136,7 @@
     "type": "Nos Soins du visage",
     "prices": {
       "30m": null,
-      "1h": 82,
+      "1h": 85,
       "1h30": null
     }
   },
@@ -144,79 +144,79 @@
     "title": "Jambes entière",
     "description": "Pour les femmes - Jambes entière",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 29, "1h30": null }
+    "prices": { "45m": 35, "1h": null, "1h30": null }
   },
   {
     "title": "Epilation - Cuisses ou demi-jambes (Femme)",
     "description": "Pour les femmes - Cuisses ou demi-jambes",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 23, "1h": null, "1h30": null }
+    "prices": { "30m": 25, "1h": null, "1h30": null }
   },
   {
     "title": "Demi-jambes",
     "description": "Pour les femmes - Cuisses ou demi-jambes",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 23, "1h": null, "1h30": null }
+    "prices": { "30m": 25, "1h": null, "1h30": null }
   },
   {
     "title": "Aisselles",
     "description": "Pour les femmes - Aisselles",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 15, "1h30": null }
+    "prices": { "10m": 15, "1h": null, "1h30": null }
   },
   {
     "title": "Maillot simple",
     "description": "Pour les femmes - Maillot simple",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 15, "1h30": null }
+    "prices": { "10m": 17, "1h": null, "1h30": null }
   },
   {
     "title": "Maillot semi-intégral",
     "description": "Pour les femmes - Maillot semi-intégral",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 27, "1h30": null }
+    "prices": { "20m": 29, "1h": null, "1h30": null }
   },
   {
     "title": "Maillot intégral",
     "description": "Pour les femmes - Maillot intégral",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 35, "1h30": null }
+    "prices": { "25m": 40, "1h": null, "1h30": null }
   },
   {
     "title": "Avant-bras",
     "description": "Pour les femmes - Avant-bras",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 23, "1h30": null }
+    "prices": { "30m": 25, "1h": null, "1h30": null }
   },
   {
     "title": "Sourcils",
     "description": "Pour les femmes - Sourcils",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 12, "1h30": null }
+    "prices": { "15m": 15, "1h": null, "1h30": null }
   },
   {
     "title": "Remodeling sourcils",
     "description": "Pour les femmes - Remodeling sourcils",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 20, "1h30": null }
+    "prices": { "20m": 20, "1h": null, "1h30": null }
   },
   {
     "title": "Menton",
     "description": "Pour les femmes - Menton",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 10, "1h30": null }
+    "prices": { "10m": 10, "1h": null, "1h30": null }
   },
   {
     "title": "Lèvres",
     "description": "Pour les femmes - Lèvres",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 10, "1h30": null }
+    "prices": { "10m": 10, "1h": null, "1h30": null }
   },
   {
     "title": "Visage entier",
     "description": "Pour les femmes - Visage entier",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 25, "1h30": null }
+    "prices": { "30m": 25, "1h": null, "1h30": null }
   },
   {
     "title": "Bras entier",
@@ -228,13 +228,13 @@
     "title": "Fessier",
     "description": "Pour les femmes - Fessier",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 19, "1h30": null }
+    "prices": { "15m": 29, "1h": null, "1h30": null }
   },
   {
     "title": "Sillon interfessier",
     "description": "Pour les femmes - Sillon interfessier",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 15, "1h30": null }
+    "prices": { "10m": 15, "1h": null, "1h30": null }
   },
   {
     "title": "Bas du dos/Bas du Ventre",
@@ -246,7 +246,7 @@
     "title": "Dos complet",
     "description": "Pour les femmes - Dos complet",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 23, "1h": null, "1h30": null }
+    "prices": { "30m": 40, "1h": null, "1h30": null }
   },
   {
     "title": "Ventre complet",
@@ -258,19 +258,19 @@
     "title": "Narines",
     "description": "Pour les femmes - Narines",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": 5, "1h": null, "1h30": null }
+    "prices": { "10m": 5, "1h": null, "1h30": null }
   },
   {
     "title": "Jambes/Bras/Dos",
     "description": "Pour les hommes - Jambes/Bras/Dos",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 45, "1h30": null }
+    "prices": { "30m": 45, "1h": null, "1h30": null }
   },
   {
     "title": "Aisselles",
     "description": "Pour les hommes - Aisselles",
     "type": "Epilation cire orientale (sucre)",
-    "prices": { "30m": null, "1h": 20, "1h30": null }
+    "prices": { "30m": 20, "1h": null, "1h30": null }
   },
   {
     "title": "Sourcils/épaules",
