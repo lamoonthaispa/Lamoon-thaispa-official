@@ -66,21 +66,21 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Massage Thaï Traditionnel", 
     description: "Massage traditionnel thaïlandais",
     category: "massage",
-    prices: { 30: 1, 60: 75, 90: 100 }
+    prices: { 30: 55, 60: 85, 90: 120 }
   },
   { 
     value: "deep-thai", 
     label: "Massage Deep Thaï ", 
     description: "Massage deep thaïlandais",
     category: "massage",
-    prices: { 60: 80 }
+    prices: { 30: 65, 60: 95, 90: 130  }
   },
   { 
     value: "oil", 
     label: "Massage aux huiles", 
     description: "Massage aux huiles essentielles",
     category: "massage",
-    prices: { 30: 49, 60: 79, 90: 110 }
+    prices: { 30: 65, 60: 95, 90: 130 }
   },
   { 
     value: "hot-oil", 
@@ -94,21 +94,21 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Massage à la bougie", 
     description: "Massage à la bougie relaxant",
     category: "massage",
-    prices: { 30: 59, 60: 95, 90: 130 }
+    prices: { 30: 65, 60: 105, 90: 140 }
   },
   { 
     value: "reflexology", 
     label: "Réflexologie Plantaire", 
     description: "Massage des pieds et réflexologie",
     category: "massage",
-    prices: { 30: 55, 60: 85 }
+    prices: { 30: 65, 60: 95 }
   },
   { 
     value: "head-shoulder", 
     label: "Massage tête et épaules", 
     description: "Massage spécifique de la tête et des épaules",
     category: "massage",
-    prices: { 30: 49 }
+    prices: { 30: 55 }
   },
   // Abonnements massage
   { 
@@ -116,14 +116,14 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Abonnement massage 5h", 
     description: "Forfait 5 heures de massage",
     category: "abonnement",
-    prices: { 300: 350 }
+    prices: { 300: 370 }
   },
   { 
     value: "abonnement-10h", 
     label: "Abonnement massage 10h", 
     description: "Forfait 10 heures de massage",
     category: "abonnement",
-    prices: { 600: 590 }
+    prices: { 600: 690 }
   },
   // Nos Gommages
   { 
@@ -138,7 +138,7 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Gommages accompagné d'un massage", 
     description: "Gommage avec massage relaxant",
     category: "gommage",
-    prices: { 60: 99, 90: 139 }
+    prices: { 60: 110, 90: 145 }
   },
   // Nos Soins du visage
   { 
@@ -160,14 +160,14 @@ const DEFAULT_MASSAGE_TYPES = [
     label: "Soin douceur de rose", 
     description: "Rituel éclatant pour tout types de peau",
     category: "soin-visage",
-    prices: { 60: 72 }
+    prices: { 60: 75 }
   },
   { 
     value: "soin-argan", 
     label: "Soin sublime argan", 
     description: "Réparation et éclat naturel, pour tout types de peau",
     category: "soin-visage",
-    prices: { 60: 82 }
+    prices: { 60: 85 }
   },
   // Epilation cire orientale - Pour les femmes (lock à 60 minutes)
   { 
@@ -176,7 +176,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Jambes entière",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 29 }
+    prices: { 60: 35 }
   },
   { 
     value: "epilation-femme-cuisses", 
@@ -184,7 +184,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Cuisses ou demi-jambes",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 23 }
+    prices: { 30: 25 }
   },
   { 
     value: "epilation-femme-aisselles", 
@@ -192,7 +192,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Aisselles",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 15 }
+    prices: { 30: 15 }
   },
   { 
     value: "epilation-femme-maillot-simple", 
@@ -200,7 +200,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Maillot simple",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 15 }
+    prices: { 30: 17 }
   },
   { 
     value: "epilation-femme-maillot-semi", 
@@ -208,7 +208,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Maillot semi-intégral",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 27 }
+    prices: { 30: 29 }
   },
   { 
     value: "epilation-femme-maillot-integral", 
@@ -216,7 +216,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Maillot intégral",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 35 }
+    prices: { 30: 40 }
   },
   { 
     value: "epilation-femme-avant-bras", 
@@ -224,7 +224,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Avant-bras",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 23 }
+    prices: { 60: 25 }
   },
   { 
     value: "epilation-femme-sourcils", 
@@ -232,7 +232,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Sourcils",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 12 }
+    prices: { 60: 15 }
   },
   { 
     value: "epilation-femme-remodeling-sourcils", 
@@ -272,7 +272,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Bras entier",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 29 }
+    prices: { 60: 32 }
   },
   { 
     value: "epilation-femme-fessier", 
@@ -280,7 +280,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Fessier",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 19 }
+    prices: { 60: 29 }
   },
   { 
     value: "epilation-femme-sillon", 
@@ -329,7 +329,7 @@ const DEFAULT_MASSAGE_TYPES = [
     description: "Epilation cire orientale - Demi-bras",
     category: "epilation",
     lockedDuration: 60,
-    prices: { 60: 25 }
+    prices: { 60: 35 }
   },
   { 
     value: "epilation-homme-torse", 
