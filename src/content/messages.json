@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "services": "Soins",
+    "services": "Prestations",
     "pricing": "Infos et tarifs",
     "book": "Réserver",
     "href" : "/booking"
