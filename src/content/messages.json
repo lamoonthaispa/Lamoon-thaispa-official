@@ -41,9 +41,9 @@
           "title": "Massage Thaï Traditionnel",
           "description": "Détend le corps et rééquilibre l’énergie par des pressions et étirements thaïlandais.",
           "durations": [
-            { "time": "30min", "price": "45€" },
-            { "time": "1h", "price": "75€" },
-            { "time": "1h30", "price": "100€" }
+            { "time": "30min", "price": "55€" },
+            { "time": "1h", "price": "85€" },
+            { "time": "1h30", "price": "120€" }
           ],
           "image": "/images/ff4017e-7f8d-4640-9657-a24a3317d8ce.png"
         },
@@ -52,9 +52,9 @@
           "title": "Massage aux huiles chaudes Coco, Monoï, Balinaise, Thé vert",
           "description": "",
           "durations": [
-            { "time": "30min", "price": "55€" },
-            { "time": "1h", "price": "85€" },
-            { "time": "1h30", "price": "120€" }
+            { "time": "30min", "price": "65€" },
+            { "time": "1h", "price": "95€" },
+            { "time": "1h30", "price": "130€" }
           ],
           "image": "/images/2.jpg"
         },
@@ -63,9 +63,9 @@
           "title": "Massage aux huiles",
           "description": "Un massage fluide et relaxant pour apaiser le corps et l'esprit.",
           "durations": [
-            { "time": "30min", "price": "49€" },
-            { "time": "1h", "price": "79€" },
-            { "time": "1h30", "price": "110€" }
+            { "time": "30min", "price": "55€" },
+            { "time": "1h", "price": "85€" },
+            { "time": "1h30", "price": "120€" }
           ],
           "image": "/images/3.jpg"
         }
