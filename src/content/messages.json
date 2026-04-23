@@ -3,7 +3,7 @@
     "services": "Prestations",
     "pricing": "Infos et tarifs",
     "book": "Réserver",
-    "href" : "tel:+66808285042"
+    "href" : "tel:+33186045448"
   },
 
   "landing": {
@@ -14,7 +14,7 @@
         { "type": "text", "value": "où se rencontrent bien-être et tradition pour une expérience unique." }
       ],
       "button": "Réserver",
-      "href" : "/booking"
+      "href" : "tel:+33186045448"
     },
   
     "features": {
@@ -34,7 +34,7 @@
       "title": "L’Art du Bien-Être Thaïlandais",
       "description": "Votre moment de détente et de bien-être commence ici.",
       "button": "Réserver",
-        "href": "tel:+66808285042",
+        "href": "tel:+33186045448",
       "cards": {
         "1": {
           "type": "Massages",
